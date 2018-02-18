@@ -13,7 +13,7 @@ The system works like this:
 2.  When it finds one, it requests a description of that service from the provider of the service. This description tells the requestor how exactly to invoke the service using SOAP. An XML standard for this is the web services description language (WSDL) and we learn this in chapter 5.
 3.  Finally the requestor invokes the service using SOAP and the     provider returns the result with SOAP.
 
-![SOA with XML web services protocols](is651-images/f4-1_opt.png)
+![SOA with XML web services protocols](f4-1_opt.png)
 
 Figure 4.1. SOA with XML web services protocols.
 
@@ -41,7 +41,7 @@ such as only integers between 0 and 120. As you can see, XMLSchema is much more 
 
 XMLSchema is very similar to a class in object-oriented programming as illustrated in figure 4.2. A class is like a template for creating instances of objects and a schema serves the same purpose and also allows validating those instances.
 
-![Classes are similar to schemas](is651-images/f4-2_opt.png)
+![Classes are similar to schemas](f4-2_opt.png)
 
 Figure 4.2. Classes are similar to schemas.
 
@@ -132,7 +132,7 @@ SOAP is now in version 1.2 and people usually refer to that as version 2. SOAP 1
 The XML is standard for all web services participants, but of course,
 the actual program doing the web service is written in some programming language that interfaces with the XML - typically J2EE, .NET, or a web scripting framework.
 
-![Distributed messaging with SOAP](is651-images/f4-8_opt.png)
+![Distributed messaging with SOAP](f4-8_opt.png)
 
 Figure 4.3. Distributed messaging with SOAP.
 
