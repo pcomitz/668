@@ -1,6 +1,6 @@
-##Chapter 4 - SOAP
+## Chapter 4 - SOAP
 
-###Introduction
+### Introduction
 
 SOAP was originally defined as the "simple object access protocol" in 1998 in a Microsoft project, but since is really has nothing to do with objects, it is now just a name and not an acronym. It is the messaging protocol for XML web services and a requestor sends the message to the provider of a service in a service-oriented architecture (SOA) using SOAP. SOAP is a wire protocol that gets information from one place to another at the application layer in a distributed system. SOAP is a standard XML document that encodes that information. SOAP is transport independent and can use any network protocol to carry the XML, but it is almost always used with HTTP using the regular web infrastructure. The SOAP document is put into the entity body of HTTP. This is very convenient since all information systems today connect to the web and already have firewalls configured to pass port 80 traffic. This was one of the big problems with CORBA (chapter 2). Since there was no such common infrastructure in those days, it had to be created from scratch.
 Recall IIOP which was the wire protocol for CORBA. Figure 4.1 repeats the general architecture of XML web services under SOA.
@@ -17,7 +17,7 @@ Figure 4.1. SOA with XML web services protocols.
 
 When SOAP was first developed, it was used to do RPC-style messaging where for example, the SOAP request made a procedure call and a SOAP response returned the result of the procedure. In those days, there was no XMLSchema and so the SOAP specification included a SOAP encoding that standardized how data structures and types were encoded in SOAP messages. We will see this distinction more specifically in the next chapter on WSDL, but since the adoption of XMLSchema, the SOAP encoding is depreciated and only XMLSchema is typically used to specify types in a SOAP massage now. So we will learn XMLSchema and the related concept of namespaces before we turn back to learning SOAP XML.
 
-###XMLSchema and Namespaces
+### XMLSchema and Namespaces
 
 Recall that XMLSchema is the alternative and more modern method of validating XML documents. We will use the on-line w3schools tutorial on XMLSchema (all sections of Learn Schema) for our examples in this chapter. See the on-line syllabus for further information.
 
@@ -81,7 +81,7 @@ xsi:schemaLocation="https://www.w3schools.com/xml/note.xsd">
 Listing 4.2. XML Document with a reference to an xml schema (from w3schools).
 
 
-###SOAP structure
+### SOAP structure
 
 The SOAP XML structure is defined in this section. It is, of course,
 defined in an XMLSchema. In listing 4.5, we see that it is defined in the namespace http://www.w3.org/2001/12/soap-envelope and since it is a standard schema, it points to the actual schema for SOAP where all the tags for SOAP are defined.
@@ -183,7 +183,7 @@ The string that is returned (for Hydrogen) contains more than the atomic number.
 will investigate below. You should exercise multiple services and become familiar 
 with the requests and the responses.
 
-###The PHP5 SOAP Client
+### The PHP5 SOAP Client
 
 There has to be a soap client that calls the soap server and optionally there can be an html form that sends the parameters to the soap client. We saw this above with the Periodic Table web service They had an html form that called a soap client which called a soap server that looked up details of the element using a server side resources, likely a small database. Services can be written in any language with a soap library. Services are designed to platform, vendor, and language neutral.
 
@@ -217,7 +217,7 @@ Since the php5 soap library returns a php data structure, we can easily create a
 Listing 4.8. [Returning XML](https://swe.umbc.edu/~pcomitz/programs/wk4/soapxml_phc.php).
 
 
-###Chapter 4 Exercises
+### Chapter 4 Exercises
 
 Do the end-of-chapter exercises for each chapter of the book by following the link in the on-line syllabus.
 
