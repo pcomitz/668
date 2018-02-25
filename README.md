@@ -1,4 +1,4 @@
-### IS 668 Textbook Rewrite
+# IS 668 Textbook Rewrite
 
 ## Welcome to GitHub Pages
 
