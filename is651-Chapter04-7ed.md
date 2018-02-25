@@ -1,8 +1,8 @@
 
 
-##Chapter 4 - SOAP
+## Chapter 4 - SOAP
 
-###Introduction
+### Introduction
 
 SOAP was originally defined as the "simple object access protocol" in 1998 in a Microsoft project, but since is really has nothing to do with objects, it is now just a name and not an acronym. It is the messaging protocol for XML web services and a requestor sends the message to the provider of a service in a service-oriented architecture (SOA) using SOAP. SOAP is a wire protocol that gets information from one place to another at the application layer in a distributed system. SOAP is a standard XML document that encodes that information. SOAP is transport independent and can use any network protocol to carry the XML, but it is almost always used with HTTP using the regular web infrastructure. The SOAP document is put into the entity body of HTTP. This is very convenient since all information systems today connect to the web and already have firewalls configured to pass port 80 traffic. This was one of the big problems with CORBA (chapter 2). Since there was no such common infrastructure in those days, it had to be created from scratch.
 Recall IIOP which was the wire protocol for CORBA. Figure 4.1 repeats the general architecture of XML web services under SOA.
