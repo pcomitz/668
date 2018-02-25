@@ -8,36 +8,16 @@ Finally, we will learn another XML standard technology called XML style language
 
 A WSDL document consists of seven basic XML elements and we will examine each one. You should know the purpose of each of these elements at the level of detail given below. Listing 5.1 shows the basic structure. The root tag of a WSDL document is definitions and it contains the other 6 tags. The definitions root tag should contain needed namespace prefixes for the WSDL. We will use the running example of the Shakespeare service that we used in the last chapter.
 
-Return to the WSDL for the Shakespeare web service at:
+Note the  WSDL for the Periodic table web service at:
 
- http://www.xmlme.com/WSShakespeare.asmx 
-
- Choose the Service Description link. Note that it goes to:
-
- http://www.xmlme.com/WSShakespeare.asmx?WSDL 
+ http://www.webservicex.net/periodictable.asmx?WSDL 
 
 which is the standard format for a URL for a WSDL on Microsoft .NET.
-View the source for the XML document which is the WSDL. We review each tag below.
+View the source for the XML document which is the WSDL. Take a few minutes to examine the WSDL. 
 
-    < ?xml version="1.0" encoding="utf-8"?>
-    <definitions
-        xmlns:s="http://www.w3.org/2000/10/XMLSchema"
-        xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
-        xmlns:tns="http://xmlme.com/WebServices"
-        xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"> 
-        <types>...</types>
-        <message>...</message>
-        <message >...</message>
-        <portType>...</portType> 
-        <binding>...</binding> 
-        <service>...</service>
-    </definitions>
+The types tag contains one or more schema tags as children for the all the types used by the service and defined with XMLSchema. Recall that the schema tag is the root tag for XMLSchemas. The XMLSchema types can be put directly into the types tag or can be imported from an external .xsd document. 
 
-Listing 5.1. WSDL top-level structure.
-
-The types tag contains one or more schema tags as children for the all the types used by the service and defined with XMLSchema. Recall that the schema tag is the root tag for XMLSchemas. The XMLSchema types can be put directly into the types tag or can be imported from an external .xsd document. Listing 5.2 shows the types section which uses internal XMLSchema types.
-
-There are two message tags that give an abstract definition of the incoming and outgoing messages to the service respectively. You can see in figure 5.3 that the messages are for an incoming request and the outgoing response. I will suppress the wsdl prefix for the remainder of the examples for clarity - assume it was declared as default as xmlns="http://schemas.xmlsoap.org/wsdl/".
+There are many message tags that give an abstract definition of the incoming and outgoing messages to the service respectively. You can see in figure 5.3 that the messages are for an incoming request and the outgoing response. I will suppress the wsdl prefix for the remainder of the examples for clarity - assume it was declared as default as xmlns="http://schemas.xmlsoap.org/wsdl/".
 
 The prefix tns is the conventional prefix for targetNamespace. There may be one or more part tags that are the message payload. So the message tags give the datatypes for the operations.
 
