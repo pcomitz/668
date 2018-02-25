@@ -1,6 +1,6 @@
 
 
-##Chapter 5 - WSDL
+## Chapter 5 - WSDL
 
 WSDL (pronounced "Wisdel") is an XML vocabulary that describes all aspects of web services. It stands for web services description language. Recall that an XML vocabulary is the list of tags that form a specific markup language defined in a DTD or XMLSchema. In XML terminology, we say that WDSL (like SOAP) is an application of XML. WSDL like all web services protocols is created with XMLSchema. It is a crucial part of the system created for web services in that it gives a service requestor explicit documentation on how to create the request.
 It is so explicit, in fact, that a computer program can use WSDL to automatically create a SOAP document. In this chapter, we will cover WSDL in detail and briefly discuss the universal discovery description and integration (UDDI) protocol and web services registries in general.
@@ -121,7 +121,7 @@ This service defines two web services, one for SOAP 1.1 and one for version 1.2.
 
 WSDL is currently in version 1.2 that is commonly called version 2. WSDL version 1.1 (called version 1) is still more commonly used.
 
-###Registries
+### Registries
 
 We will not cover XML web service registries in detail in this book, but it is important to understand their function in the three-part web services architecture (figure 4.1) . Requestors can search the registries (on-line databases) for information on what web services are available and how to get more detailed information (WSDL) on them. These registries can be public or private to a company. The standard XML-based specification for search of this information is UDDI. Requestors can use SOAP to query a UDDI registry. UDDI is the least successful of the three basic or so-called first-generation XML web services standards. This is largely because there are so many other ways to implement it and many of those ways are already used by organizations. Examples would be regular database processing, web pages and associated applications, or network directories such as Microsoft Active Directory or an X.500 directory using LDAP. We will discuss network directories in chapter 8.
 
@@ -133,7 +133,7 @@ There is a standard for the three basic web service protocols called the Web Ser
 -   WSDL 1.1
 -   UDDI 2.0
 
-###XSLT
+### XSLT
 
 Extensible stylesheet language transformations (XSLT) is an XML-based functional language that can transform any XML document into any other XML document. It became a W3C recommendation in 2007. Common uses are to transform XML documents into HTML documents for display on the web and to transform XML into different formats required by different endpoints for a web service. The functional character of the language means that it is declarative. Most programming languages you are familiar with are procedural in that they list an imperative sequence of actions. XSLT just defines template rules for matching patterns and the XSLT processor handles the evaluation. We will use the w3schools on-line tutorial for XSLT (XSLT Basic) and XPath (XPath Syntax only). XSLT relies upon the W3C XPath language for identifying subsets of the source XML document tree for transform.
 
@@ -247,6 +247,6 @@ Listing 5.6. The HTML output.
 
 XSLT is also used to transform XML documents in web services from one XML format to another when the participants need it. For example, in the PO example we used earlier, one of the participants might be using a different XMLSchema for the PO natively on their system than the one that is used by the web service that processes the POs even though all the actual content is the same. So XSLT can be used to transform the XML to use the appropriate schema at the appropriate time.
 
-###Chapter 5 Exercises
+### Chapter 5 Exercises
 
 Do the end-of-chapter exercises for each chapter of the book by following the link in the on-line syllabus.
