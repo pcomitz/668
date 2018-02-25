@@ -19,7 +19,7 @@ Figure 4.1. SOA with XML web services protocols.
 
 When SOAP was first developed, it was used to do RPC-style messaging where for example, the SOAP request made a procedure call and a SOAP response returned the result of the procedure. In those days, there was no XMLSchema and so the SOAP specification included a SOAP encoding that standardized how data structures and types were encoded in SOAP messages. We will see this distinction more specifically in the next chapter on WSDL, but since the adoption of XMLSchema, the SOAP encoding is depreciated and only XMLSchema is typically used to specify types in a SOAP massage now. So we will learn XMLSchema and the related concept of namespaces before we turn back to learning SOAP XML.
 
-###XMLSchema and Namespaces
+### XMLSchema and Namespaces
 
 Recall that XMLSchema is the alternative and more modern method of validating XML documents. We will use the on-line w3schools tutorial on XMLSchema (all sections of Learn Schema) for our examples in this chapter. See the on-line syllabus for further information.
 
