@@ -13,9 +13,9 @@ Note the  WSDL for the Periodic table web service at:
  http://www.webservicex.net/periodictable.asmx?WSDL 
 
 which is the standard format for a URL for a WSDL on Microsoft .NET.
-View the source for the XML document which is the WSDL. Take a few minutes to examine the WSDL. 
+View the source for the XML document which is the WSDL. Take a few minutes to examine the WSDL. Note the different tags. 
 
-The types tag contains one or more schema tags as children for the all the types used by the service and defined with XMLSchema. Recall that the schema tag is the root tag for XMLSchemas. The XMLSchema types can be put directly into the types tag or can be imported from an external .xsd document. 
+The types tag contains one or more schema tags as children for the all the types used by the service and defined with XMLSchema. Recall that the schema tag is the root tag for XMLSchemas. The XMLSchema types can be put directly into the types tag or can be imported from an external .xsd document. Listing 5.2 shows an example of the use the types tag using internal XMLSchema types. 
 
 There are many message tags that give an abstract definition of the incoming and outgoing messages to the service respectively. You can see in figure 5.3 that the messages are for an incoming request and the outgoing response. I will suppress the wsdl prefix for the remainder of the examples for clarity - assume it was declared as default as xmlns="http://schemas.xmlsoap.org/wsdl/".
 
