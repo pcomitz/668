@@ -1,5 +1,4 @@
 
-
 ## Chapter 5 - WSDL
 
 WSDL (pronounced "Wisdel") is an XML vocabulary that describes all aspects of web services. It stands for web services description language. Recall that an XML vocabulary is the list of tags that form a specific markup language defined in a DTD or XMLSchema. In XML terminology, we say that WDSL (like SOAP) is an application of XML. WSDL like all web services protocols is created with XMLSchema. It is a crucial part of the system created for web services in that it gives a service requestor explicit documentation on how to create the request.
@@ -20,7 +19,7 @@ The types tag contains one or more schema tags as children for the all the types
 There are many message tags that give an abstract definition of the incoming and outgoing messages to the service respectively. You can see in figure 5.3 that the messages are for an incoming request and the outgoing response. I will suppress the wsdl prefix for the remainder of the examples for clarity - assume it was declared as default as xmlns="http://schemas.xmlsoap.org/wsdl/".
 
 The prefix tns is the conventional prefix for targetNamespace. There may be one or more part tags that are the message payload. So the message tags give the datatypes for the operations.
-
+```wsdl
     <wsdl:types>
         <s:schema
             elementFormDefault="qualified"
@@ -49,6 +48,7 @@ The prefix tns is the conventional prefix for targetNamespace. There may be one 
     </wsdl:types>
 
 Listing 5.2. Types.
+```
 
 ![Message](is651-images/f5-3_opt.png)
 
