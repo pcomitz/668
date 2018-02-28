@@ -170,13 +170,13 @@ is a catalog of web services. You should pick several service and experiment wit
 </xmp>
 ```
 The actual web service resides on the server that hosts the service. The service response is:
-<xmp>
+```
 <soap:Body>
     <GetAtomicNumberResponse xmlns="http://www.webserviceX.NET">
       <GetAtomicNumberResult>string</GetAtomicNumberResult>
     </GetAtomicNumberResponse>
   </soap:Body>
-
+```
 The string that is returned (for Hydrogen) contains more than the atomic number. We 
 will investigate below. You should exercise multiple services and become familiar 
 with the requests and the responses.
@@ -190,7 +190,7 @@ So let's write a soap client for the same Periodic Table web service in php5 on 
 
 See listing 4.7 for the code.
 
-```xml
+```php
 < ?php
     $requestParams = array(
         'ElementName' => 'Hydrogen');
