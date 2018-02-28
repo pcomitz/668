@@ -162,7 +162,6 @@ is a catalog of web services. You should pick several service and experiment wit
 . Note that the services has a number of exposed methods. An exposed method is a method that can be invoked over a network. In this example the method is invoked using http and soap. Consider the GetAtomicNumber method, 
 [http://www.webservicex.net/periodictable.asmx?op=GetAtomicNumber](http://www.webservicex.net/periodictable.asmx?op=GetAtomicNumber) .  The SOAP request message and the corresponding response is shown. For example if <i>Hydrogen</i> is entered, the ElementName field in the SOAP body will have a value of <i>Hydrogen</i>.  
 ```xml
-<xmp>
 <soap:Body>
    <GetAtomicNumber xmlns="http://www.webserviceX.NET">
      <ElementName>string</ElementName>
@@ -177,7 +176,6 @@ The actual web service resides on the server that hosts the service. The service
       <GetAtomicNumberResult>string</GetAtomicNumberResult>
     </GetAtomicNumberResponse>
   </soap:Body>
-</xmp>
 
 The string that is returned (for Hydrogen) contains more than the atomic number. We 
 will investigate below. You should exercise multiple services and become familiar 
@@ -192,7 +190,7 @@ So let's write a soap client for the same Periodic Table web service in php5 on 
 
 See listing 4.7 for the code.
 
-<pre>
+```xml
 < ?php
     $requestParams = array(
         'ElementName' => 'Hydrogen');
@@ -200,7 +198,7 @@ See listing 4.7 for the code.
     $response = $client->GetAtomicWeight($requestParams);
     print_r($response);
 ?>
-</pre>
+```
 
 Listing 4.7. PHP5 Soap
 
