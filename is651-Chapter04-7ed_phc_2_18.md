@@ -44,7 +44,7 @@ XMLSchema is very similar to a class in object-oriented programming as illustrat
 Figure 4.2. Classes are similar to schemas.
 
 Listing 4.1 shows the very simple schema of the basic note example at w3schools. We see that the example has XML syntax and datatypes, but it also has namespaces. Namespaces are a general concept from programming to avoid name collision. Name collision happens when the same name is chosen mistakenly for two different objects. For example, if you and I were collaboratively programming, but in separate locations, we would have to make up variable names in our program. It might happen that we would sometimes accidentally choose the same variable name for different logical things. In order to avoid this, we can use namespaces where the names must only be unique within the namespace. So if I used the namespace kip and the other programmer used the namespace sue we could choose any name we wanted. We might adopt a prefix convention where our names were prefixed with our namespace to make the name unique as in kip:item and sue:item.
-```
+```xml
     < ?xml version="1.0"?>
     <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
         <xs:element name="note">
