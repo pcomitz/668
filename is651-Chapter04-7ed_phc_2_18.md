@@ -167,7 +167,6 @@ is a catalog of web services. You should pick several service and experiment wit
      <ElementName>string</ElementName>
    </GetAtomicNumber>
  </soap:Body>
-</xmp>
 ```
 The actual web service resides on the server that hosts the service. The service response is:
 ```
