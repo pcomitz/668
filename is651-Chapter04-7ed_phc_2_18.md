@@ -66,8 +66,8 @@ This is exactly what XML namespaces do. In listing 4.1, we see that the prefix x
 The prefixes are arbitrary and you can make them up, although for standard namespaces, there are usually conventions like the xs in the example although you will often see xsd instead. A default namespace is declared with the xmlns attribute without any prefix. This means that all elements with no prefix are in that default namespace. XMLSchemas are for defining a namespace for the elements in an XML document as we will see below and so the default is reserved for the content being validated.
 
 Recall the note example of Listing 4.1. An xml document that conforms to that schema is:
+```xml
 <?xml version="1.0"?>
-
 <note
 xmlns="https://www.w3schools.com"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -77,7 +77,7 @@ xsi:schemaLocation="https://www.w3schools.com/xml/note.xsd">
   <heading>Reminder</heading>
   <body>Don't forget me this weekend!</body>
 </note>
-
+```
 Listing 4.2. XML Document with a reference to an xml schema (from w3schools).
 
 
@@ -87,7 +87,7 @@ The SOAP XML structure is defined in this section. It is, of course,
 defined in an XMLSchema. In listing 4.5, we see that it is defined in the namespace http://www.w3.org/2001/12/soap-envelope and since it is a standard schema, it points to the actual schema for SOAP where all the tags for SOAP are defined.
 
 All SOAP documents consist of an envelope and inside that tag is the optional header and required body tags. Lisiting 4.4 shows an RPC-style request for the procedure GetProductPrice with the parameter of productId. The header includes a requirement that whatever provider gets this message, it must understand the transaction ID.
-
+```xml
     < ?xml version="1.0" encoding="utf-8"?>
     <soap:Envelope xmlns:soap="http://www.w3.org/2001/12/soap-envelope">
          <soap:Header>
@@ -102,16 +102,15 @@ All SOAP documents consist of an envelope and inside that tag is the optional he
              </m:GetProductPrice>
          </soap:Body>
     </soap:Envelope>
-
+```
 Listing 4.4. An RPC-style SOAP document.
 
 Anything in the header modifies or offers services to the main payload in the body. We will see many more examples of the header elements in chapter 6. There are two styles for SOAP messages. We have seen the RPC-style and the other is the document style. The document style sends a complete XML document rather than a procedure call as in listing 4.5.
 It is a much more loosely-coupled style than RPC and more congruent with SOA. Figure 4.5 shows a document-style SOAP message.
 
 The Body element is a generic container in that it can contain any number of elements from any namespace. This is ultimately where the data goes that you"re trying to send. Since there are unknown foreign namespaces in SOAP, the schema for SOAP must allow these unknown and unpredictable namespaces. It does this by using wildcard attributes that begin with a ##. For example, ##any is for any namespace. We will take a look at the schema for SOAP in one of the exercises.
-
+```xml
 <?xml version="1.0"?>
-
 <soap:Envelope
 xmlns:soap="http://www.w3.org/2003/05/soap-envelope/"
 soap:encodingStyle="http://www.w3.org/2003/05/soap-encoding">
@@ -123,7 +122,7 @@ soap:encodingStyle="http://www.w3.org/2003/05/soap-encoding">
 </soap:Body>
 
 </soap:Envelope>
-
+```
 Listing 4.5. A Document-style SOAP document.
 
 SOAP is now in version 1.2 and people usually refer to that as version 2. SOAP 1.1 is still the dominant version in use, however, and is called version 1. For XML web services, a requestor creates a SOAP message and typically sends it to a provider using an HTTP binding as in figure 4.3.
@@ -137,7 +136,7 @@ Figure 4.3. Distributed messaging with SOAP.
 A SOAP message may go to many different hosts in a distributed system in order to, for example, complete a workflow. There can be only one ultimate receiver, however, that can operate on the body. All the intermediaries can only operate on the header as we will see in chapter 6. The intermediaries typically do things like encryption,
 authentication, and authorization. If a service provider gets an error in processing a SOAP document, there is a special fault tag defined in the SOAP schema that goes in the body of the SOAP response and gives information on the error. An example is shown in listing 4.6. You can see the SOAP fault codes at w3schools.
 
-
+```xml
     < ?xml version="1.0" encoding="UTF-8"?>
     <soap:Envelope
         xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
@@ -154,6 +153,7 @@ authentication, and authorization. If a service provider gets an error in proces
             </soap:Fault>
         </soap:Body>
     </soap:Envelope>
+```
 
 Listing 4.6. SOAP fault.
 
@@ -161,7 +161,7 @@ Let's look at a example SOAP Web service. The site [http://www.webservicex.net/n
 is a catalog of web services. You should pick several service and experiment with them. Consider the Periodic Table service at [http://www.webservicex.net/New/Home/ServiceDetail/19](http://www.webservicex.net/New/Home/ServiceDetail/19) 
 . Note that the services has a number of exposed methods. An exposed method is a method that can be invoked over a network. In this example the method is invoked using http and soap. Consider the GetAtomicNumber method, 
 [http://www.webservicex.net/periodictable.asmx?op=GetAtomicNumber](http://www.webservicex.net/periodictable.asmx?op=GetAtomicNumber) .  The SOAP request message and the corresponding response is shown. For example if <i>Hydrogen</i> is entered, the ElementName field in the SOAP body will have a value of <i>Hydrogen</i>.  
-
+```xml
 <xmp>
 <soap:Body>
    <GetAtomicNumber xmlns="http://www.webserviceX.NET">
@@ -169,7 +169,7 @@ is a catalog of web services. You should pick several service and experiment wit
    </GetAtomicNumber>
  </soap:Body>
 </xmp>
-
+```
 The actual web service resides on the server that hosts the service. The service response is:
 <xmp>
 <soap:Body>
