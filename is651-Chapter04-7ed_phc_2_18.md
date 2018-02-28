@@ -169,7 +169,7 @@ is a catalog of web services. You should pick several service and experiment wit
  </soap:Body>
 ```
 The actual web service resides on the server that hosts the service. The service response is:
-```
+```xml
 <soap:Body>
     <GetAtomicNumberResponse xmlns="http://www.webserviceX.NET">
       <GetAtomicNumberResult>string</GetAtomicNumberResult>
