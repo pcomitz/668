@@ -119,9 +119,7 @@ The Guardian REST API is documented here (read 'What is the Open Platform?' ther
 
 -   http://open-platform.theguardian.com/
 
-That documentation describes how to construct a URL for the REST API. See the Services/Content API/Reference Guides/Search link for the [specific docs for the search endpoint](http://www.theguardian.com/open-platform/content-api-content-search-reference-guide?guni=Keyword:news-grid%20main-3%20Trailblock:Pickable%20with%20editable%20override:Position1:sublinks&guni=Keyword:news-grid%20main-3%20Trailblock:Pickable%20with%20editable%20override:Position1:sublinks). Using that Guardian documentation, we can create the URL below and see the truncated JSON result in listing 7.3.  It is not real api key, but you can put this url in the address box of your browser and see it work after you get your key. The link below works because I deployed it in php (see the slides).
-
--   [content.guardianapis.com/search?q=syria&section=news&from-date=2013-09-01&api-key=xyz](http://userpages.umbc.edu/~canfield/guardian/guardian2.php)
+That documentation describes how to construct a URL for the REST API. See the Services/Content API/Reference Guides/Search link for the [specific docs for the search endpoint](http://www.theguardian.com/open-platform/content-api-content-search-reference-guide?guni=Keyword:news-grid%20main-3%20Trailblock:Pickable%20with%20editable%20override:Position1:sublinks&guni=Keyword:news-grid%20main-3%20Trailblock:Pickable%20with%20editable%20override:Position1:sublinks).
 
 Note the following about the XML result in listing 7.3:
 
