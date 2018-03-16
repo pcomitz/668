@@ -1,8 +1,8 @@
 
 
-##Chapter 7 - REST Web Services
+## Chapter 7 - REST Web Services
 
-###Introduction
+### Introduction
 
 REST stands for representational state transfer and is an architectural principle rather than a specific technology or standard. It was introduced in a doctoral dissertation by Roy Fielding in 2000 (see the on-line syllabus for references). The REST-style architecture is just like the web. There are requests and responses that are the transfer of resources. Resources are any addressable object (as in something with a URI on the web). HTTP follows these principles summarized here:
 
@@ -249,7 +249,7 @@ This completes our treatment of REST although we will look at another API in the
 
 Listing 7.5. Guardian call from ajax using jquery.
 
-###Hypermedia APIs
+### Hypermedia APIs
 
 Most REST APIs are as described above. An example is the Flickr API that we use in the exercies. They miss a crucial requirement associated with uniform interface listed in the Fielding dissertation, however. See Figure 7.4. We will use an external video lecture and a couple of readings on the reference page to see how the recent proposals for Hypermedia APIs are a little different than typical REST APIs. Be sure and know these terms and concepts:
 
@@ -261,7 +261,7 @@ Most REST APIs are as described above. An example is the Flickr API that we use 
 
 Figure 7.4. Hypermedia APIs
 
-###RSS
+### RSS
 
 We now turn to a different family of XML vocabularies under the heading of really simple syndication as RSS is most commonly known. It has also been known as rich site summary and RDF site summary. You are probably familiar with RSS as a news feed that is associated with blogs. Each blog entry is an item in the XML of RSS and makes it easy to download all the blog entries in one file. RSS is generally useful, however, in information systems. For example, in the BPEL runtime, we could use an RSS feed to monitor the activity of status messages in the workflow. In fact, RSS can be considered an early web service since a web request results in the return of an XML file rather than a web page. It was really the first REST web service (long before they called it that). There are multiple versions, however, and RSS has a rather complicated history.
 
@@ -306,7 +306,7 @@ Listing 6.3. RSS 2.0.
 
 We will now take a look at an XML vocabulary for graphics.
 
-###SVG
+### SVG
 
 SVG is an XML vocabulary for describing 2-dimensional vector graphics.
 It is a W3C specification that began in 1999. The current version is SVG 1.1. Vector graphics is the use of geometrical primitives such as points, lines, curves, and shapes or polygon(s), which are all based on mathematical equations, to represent images in computer graphics. So vector graphics can be resized to different resolutions (the scalable part) without resampling or image degradation. Raster graphics on the other hand, represents images as an array of pixels (a bitmap) and have a fixed resolution that can only be changed by resampling algorithms than add or subtract from the image resulting in degradation. Png, gif and jpg are all examples of raster graphics.
@@ -327,6 +327,6 @@ Google has recently started indexing all SVG on the web and so now you can do cu
 
 Adobe Flash is currently the most widely used vector graphics and animation format on the web, but it is in a proprietary, binary format that makes interoperability problematic. SVG mixes easily with web services since it is XML. One can send SVG diagrams or animations via SOAP or REST messages. HTML5 supports SVG and its own Canvas drawing technology and many think this will replace Flash. SVG is better for high resolution and Canvas is better for fast animation.
 
-###Chapter 7 Exercises
+### Chapter 7 Exercises
 
 Do the end-of-chapter exercises for each chapter of the book by following the link in the on-line syllabus.
