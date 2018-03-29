@@ -1,14 +1,14 @@
+ 
 
+## Chapter 9 - Microservices
+### Introduction
 
-##Chapter 9 - Microservices
-###Introduction
+We will use this [introduction to microservices](https://www.nginx.com/blog/introduction-to-microservices) from [nginx](https://www.nginx.com/), section 1 only (cached pdf [here](../Microservices_Designing_Deploying.pdf)). We will revisit microservices and read additional sections in chapter 12.  In order for us to really understand the distinction between monoliths and microservices, we will examine a popular design pattern used in web frameworks.
 
-We will use this [introduction to microservices](https://www.nginx.com/blog/introduction-to-microservices) from [nginx](https://www.nginx.com/), section 1 only (cached pdf [here](../Microservices_Designing_Deploying.pdf)). We will revisit microservices and read additional sections in chapter 12.  In order for us to really understand the distinction between monoliths and microservices, we will examine web framewroks.
-
-###Web Frameworks
+### Web Frameworks
 
 Almost all new development for distributed systems today is based around the web infrastructure of using HTTP to access web resources and web services. Creating presentation tier clients with web-based programming frameworks for this infrastructure helps the architects and developers to effectively and quickly build, test, and deploy these applications.
-We will survey web-based frameworks in this chapter for major implementation technologies and do some programming exercises using PHP to make the discussion more concrete.
+We will survey web-based frameworks in this chapter for major implementation technologies and do some programming exercises to make the discussion more concrete.
 
 The four tier web infrastructure is shown in figure 9.1 with the logical presentation tier highlighted as where these web-based frameworks are focused at delivering web applications. The frameworks involve all layers, however, in that the frameworks use javascript in the web browser, web servers to deliver content, application server technology such as PHP for server-side processing, and databases for maintaining state.
 
@@ -60,7 +60,7 @@ oriented programming languages and follow the same patterns we have already seen
 
 <a name="tmvc"></a>
 
-####TinyMVC
+#### TinyMVC
 
 A few details about PHP and the gl environment are needed before you start working with TinyMVC. Firstly, the point of this exercise is not to make you an expert programmer. The point of this exercise and those below are to make the concepts associated with frameworks concrete, just as in chapter 3. It is not necessary to be an experienced programmer to complete these exercises because the code is given to you. Just reading about the concepts, however, does not result in any real understanding.
 
@@ -133,7 +133,7 @@ where you use your own username. You will be prompted for your password and use 
     -   In mysql, one can normally create any number of databases with any number of tables in each database. This is not true for our student implementation. You only have one database and it has your username as the name. You cannot create additional databases or change the name of the single database. You can create any number of tables within your one database, however. This will work fine for the exercise.
     -   You can create, see, and manipulate database tables with the mysqladmin web-based interface at: http://webadmin.umbc.edu/mysqladmin/. You will be using it to create the database tables for the tutorial. It is actually the same thing as the command-line interface, but with the web-based graphical interface. Be sure to change your password to something secure.
 
-#####TinyMVC CRUD Tutorial
+##### TinyMVC CRUD Tutorial
 
 We will build a [simple CRUD application in TinyMVC](https://swe.umbc.edu/~canfield/tinymvc/index.php/grades/roster) to see how it works. You can use the simple grade roster application and update records but cleanup after yourself - delete the records you create. Note:
 
@@ -141,7 +141,7 @@ We will build a [simple CRUD application in TinyMVC](https://swe.umbc.edu/~canfi
 - This is an example of the `monolith` type of application in the reading because everything is tightly coupled.
 - We will go over this in class, but it is very important for you to read the simple code and understand it.  There is nothing here that you cannot understand with what you know now.
 
-####Silex
+#### Silex
 
 We will also install a different style of micro-framework that works well for <em>single-page apps</em> called [silex](http://silex.sensiolabs.org/).  This install also is basically just an unzip of the zipped source.  Read the docs to see how the routing is different than TinyMVC.  You will not be doing much with this framework now except showing the start 'hello' file, but we will use it in chapter 11. You can see it in my gl account here at http://swe.umbc.edu/~canfield/silex/web/index.php/hello/kip. You can get rid of the ugly index.php (front controller or router) using a <em>.htaccess</em> file inside the web directory with this one-line content (but with your username of course):
 
@@ -154,6 +154,6 @@ This allows you to use urls such as:
 The front controller is still called each time, but since it is in every url, the .htaccess file inserts it. This allows one to have 'pretty' urls.
 
 
-###Chapter 9 Exercises
+### Chapter 9 Exercises
 
 Do the end-of-chapter exercises for each chapter of the book by following the link in the on-line syllabus.
