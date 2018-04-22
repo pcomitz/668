@@ -1,108 +1,19 @@
+ 
 
+## Chapter 10 - SOAP Revisited
 
-##Chapter 10 - SOAP Revisited
-
-###Introduction
+### Introduction
 
 We will implement our own SOAP clients and servers in this chapter. We will use the native PHP5 SOAP library. This exercise will give us more insight into how distributed systems are put together and the focus is not on programming. You will be given the programs and expected to make only very minor modifications. It will require some effort, however, to understand how the programs work and how all the pieces fit together, which is our goal. We will see in greater detail how the technology of XML web services fits with implementation technologies.
 
 SOAs that use SOAP-based web services consist of clients and servers that understand SOAP. The back-end processing for the servers must, of course, be implemented in some programming language within a library-
 supported framework that will connect the XML of the XML web services to those programs. We will be doing a simple SOA using PHP as the back-end language and the SOAP library as the connector piece in the architecture.
 
-###Creating a PHP SOAP (Proxy) Client
-
-Listing 10.1 shows a SOAP client for the Shakespeare service we used in chapter 4.
-
-Notes:
-
-1. Here is a <a href="https://swe.umbc.edu/~canfield/soap/samples/shakesclient.php">live view</a> from gl. View the source.
-2. We see the request SOAP XML created by this SOAP client in listing 10.2 that is also displayed by the app. One would not display this in real-life - it is just for our edification.
-3. This is hard-coded. One has to change the request string in the code to get a different result.
-
-        < ?php
-            $requestParams = array(
-                'Request' => 'My Kingdom for a horse'
-            );
-
-            $client = new SoapClient('http://www.xmlme.com/WSShakespeare.asmx?WSDL', array('trace' => 1));
-            $response = $client->GetSpeech($requestParams);
-
-            #print_r($response);
-            echo $response->GetSpeechResult;
-            echo "<hr/>";
-            echo "View source to see this xml:<br/>";
-            echo $client->__getLastRequest() . "\n";
-            echo $client->__getLastResponse() . "\n\n";
-        ?>
-
-Listing 10.1. The SOAP shakespeare client.
-
-    < ?xml version="1.0" encoding="UTF-8"?>
-    <SOAP-ENV:Envelope 
-        xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" 
-        xmlns:ns1="http://xmlme.com/WebServices">
-        <SOAP-ENV:Body>
-            <ns1:GetSpeech>
-                <ns1:Request>My Kingdom for a horse</ns1:Request>
-            </ns1:GetSpeech>
-        </SOAP-ENV:Body>
-    </SOAP-ENV:Envelope>
-
-Listing 10.2. The SOAP request.
-
-We would need this server-side client for an HTML page we created for a user to access this web service. Recall that a request for a service is subject to the same domain rule for web browsers. A web browser cannot request the Shakespeare web service from the xmlme.com domain when the web page comes from the umbc.edu domain, but using the listing 10.1 program as a proxy client, it will work since server-side programs have no such restriction.
-
-Listing 10.3 shows such an HTML page. You can see working links to all these programs in the on-line syllabus for chapter 10.
-
-    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <title>HTML form for Shakespeare web service</title>
-    </head>
-    <body>
-        <h2>GetSpeech</h2>
-        <p>
-        GetSpeech requires a string formatted phrase from one of Shakespeare's plays as input. The speech, speaker, and play will be returned as an XML string. Sample Shakespeare Phrases: To be, or not to be | My kingdom for a horse | Get thee to a nunnery | ... 
-        </p>
-        <h3>HTML Form for Shakespeare Web Service</h3>
-        <form action="soap/samples/shakesclient2.php" method="get"><!--1. http GET method -->
-            Enter a line: <input type="text" size="40" name="sline" /><!--2. parameter -->
-            <input type="submit" />
-        </form>
-    </body>
-    </html>
-
-Listing 10.3. The HTML page that calls the PHP client.
-
-Each program comment is further explained below:
-
-1.  The form action calls our program from listing 10.1 with a slight modification. It uses the HTTP GET method that will put the parameter in an HTTP querystring in the request URL.
-2.  The form calls a slightly different version of the client that parses the xml response. See the code at shakesclient2.txt. It works with the original client also.
-3.  There is an input tag that allows a user to type in a line from the displayed choices. Since the name of the input tag is sline, the request URL would be:
-    
-    `https://swe.umbc.edu/~canfield/soap/samples/shakesclient2.php?sline=Get%20thee%20to%20a%20nunnery`
-    
-(which should be all on one line). The funny characters in the URL for `Get%20thee%20to%20a%20nunnery` are URL encoding. The browser has replaced illegal URL characters such as space and comma with other characters specified in the W3C URL specification.
-
-A slight modification is required to the program in listing 10.1 to make this web application work. Note that in the program, the $request is hard coded. It will only work with that line 'Winter of our discontent'.
-We need it to work with any line submitted from the HTML form. So we must replace that line with the $request with:
-
-`$requestParams = array('Request' => $_GET["sline"]);`
-
-This gets the parameter from the HTTP querystring that was created from the line entered in the HTML form. You can review the use of the $_GET function in the PHP tutorial at w3schools. A programming note about PHP is that this array is called an associative array or hash. This means that the indexes of the array are strings rather than integers. PHP uses the hash rocket notation (=>) to associate them. If you needed more than one parameter in the array because the SOAP has more than one, PHP uses a comma separated list of any length as below:
-
-    < ?php
-        $arr = array("foo" => "bar", 12 => true); echo $arr["foo"]; // prints bar
-        echo $arr[12]; // prints 1 (for true)
-    ?>
-
-###Creating a Server in PHP SOAP
+### Creating a Server in PHP SOAP
 
 The scenario for our case study will be an e-commerce system where wholesalers create SOAP servers to receive POs from retailers and return an invoice. Listing 10.4 shows the SOAP server code. The on-line syllabus has links for working code. Each program comment is further explained below:
 
-1. 
-
-Listing 10.5 shows the cdx.php file with the code for the service. This is a very unrealistic service in the interest of keeping it simple for us to concentrate on the structure of the application.
+1. Listing 10.5 shows the cdx.php file with the code for the service. This is a very unrealistic service in the interest of keeping it simple for us to concentrate on the structure of the application.
 
         < ?php
             class MyService
