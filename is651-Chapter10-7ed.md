@@ -11,9 +11,9 @@ supported framework that will connect the XML of the XML web services to those p
 
 ### Creating a Server in PHP SOAP
 
-The scenario for our case study will be an e-commerce system where wholesalers create SOAP servers to receive POs from retailers and return an invoice. Listing 10.4 shows the SOAP server code. The on-line syllabus has links for working code. Each program comment is further explained below:
+The scenario for our case study will be an e-commerce system where wholesalers create SOAP servers to receive POs from retailers and return an invoice. Listing 10.1 shows the SOAP server code. The on-line syllabus has links for working code. Each program comment is further explained below:
 
-1. Listing 10.5 shows the cdx.php file with the code for the service. This is a very unrealistic service in the interest of keeping it simple for us to concentrate on the structure of the application.
+1. Listing 10.2 shows the cdx.php file with the code for the service. This is a very unrealistic service in the interest of keeping it simple for us to concentrate on the structure of the application.
 
         < ?php
             class MyService
@@ -41,15 +41,15 @@ The scenario for our case study will be an e-commerce system where wholesalers c
             $server->handle();
         ?>
 
-Listing 10.4. SOAP server (cdsoapserver.php).
+Listing 10.1. SOAP server (cdsoapserver.php).
 
-Note the following about listing 10.4:
+Note the following about listing 10.1:
 
 -   The catalog is just 3 hard-coded arrays. In real-life, of course, this would come from either a relational or XML database.
 -   We are not updating the inventory. So if someone buys something, the inventory numbers are not decremented - very unrealistic.
 -   This service simply uses the inputs of the ID of the cd and the needed quantity to check the 'database' and see if there are enough to meet the demand. If so, an 'Invoice' is generated with the total price in dollars. No code lines ending with semi-colons should actually wrap as some do in this book format.
 
-The SOAP client (cdsoapclient.php) to access this web service is given in listing 10.5. It should be familiar from our previous discussion of SOAP clients. Retailers send 2 parameters to the wholesaler's SOAP server - the ID of the cd and the desired quantity.
+The SOAP client (cdsoapclient.php) to access this web service is given in listing 10.2. It should be familiar from our previous discussion of SOAP clients. Retailers send 2 parameters to the wholesaler's SOAP server - the ID of the cd and the desired quantity.
 
         < ?php
             $options = array(
@@ -63,9 +63,9 @@ The SOAP client (cdsoapclient.php) to access this web service is given in listin
             echo $client->cdstore($cd, $q)['invoice']. "<br/>\n"
         ?>
 
-Listing 10.5. The SOAP client for the cdStore service (cdsoapclient.php).
+Listing 10.2. The SOAP client for the cdStore service (cdsoapclient.php).
 
-We notice a few undesirable things about the code in listing 10.5:
+We notice a few undesirable things about the code in listing 10.2:
 
 -   The client parameters are hard-coded. This will not really work since we want to be able to order any of the CDs. We will remedy this in the exercises.
 -   In a real B2B situation, we would want to be able to submit an XML PO to the wholesaler instead of just the values for a single cd. We would want to have a whole list of items as we saw in the shiporder PO from chapter 4. In the interests of simplicity, we will discuss this below but not fix it.
@@ -95,9 +95,9 @@ The step numbers for the message flow in figure 10.1 are given below:
 The ESB offers services that are common to many web serices on the same application server.  Figure 10.2 shows the BPEL workflow. A received PO must be verified against a set of business rules that check purchase amounts, credit and payment history, etc. This verification is done automatically by the cdStore. After verification, the PO either begins the shipping process if in stock or it enters the back-ordered state. When the back-ordered items are received by the supplier, the order ships and the process is complete. Since these steps are largely automated and there are delays,
 the messages are sent asynchronously. There is a callback message when a step is completed. You can easily see how such a workflow can be modeled in BPEL XML and implemented in a back-end programming language framework in principle from our previous study.
 
-Listing 10.7 shows the SOAP message for the submission of the PO. It is very similar to the document-style message we saw in chapter 4. The headers for WS-Addressing have been added. The namespace for the PO would be defined with XMLSchema and referenced in the WSDL types section. The WSDL would also define the asynchronous operation in the portType section for the CreatePO operation that you see in the wsa:Action tag in the SOAP.
+Listing 10.3 shows the SOAP message for the submission of the PO. It is very similar to the document-style message we saw in chapter 4. The headers for WS-Addressing have been added. The namespace for the PO would be defined with XMLSchema and referenced in the WSDL types section. The WSDL would also define the asynchronous operation in the portType section for the CreatePO operation that you see in the wsa:Action tag in the SOAP.
 
-There would be other operations besides CreatePO defined in a real web service such as GetPOStatus, UpdatePO, and CancelPO and each portType operation would be made up of defined messages. Listing 10.8 shows the SOAP response. Note that there is po:StatusURL tag that offers a RESTful interface to getting a status update on the PO. This could be implemented as an RSS feed as we discussed earlier.
+There would be other operations besides CreatePO defined in a real web service such as GetPOStatus, UpdatePO, and CancelPO and each portType operation would be made up of defined messages. Listing 10.4 shows the SOAP response. Note that there is po:StatusURL tag that offers a RESTful interface to getting a status update on the PO. This could be implemented as an RSS feed as we discussed earlier.
 
 ![BPEL workflow](is651-images/f10-8_opt.png)
 
@@ -134,7 +134,7 @@ Figure 10.2. BPEL workflow.
         </soap:Body>
     </soap:Envelope>
 
-Listing 10.7. SOAP document for cdStore scenario.
+Listing 10.3. SOAP document for cdStore scenario.
 
     <soapenv:Envelope
         xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
@@ -159,10 +159,10 @@ Listing 10.7. SOAP document for cdStore scenario.
         </soapenv:Body>
     </soapenv:Envelope>
 
-Listing 10.8. SOAP response
+Listing 10.4. SOAP response
 
 So we should remember that the W3C describes a Web Service as "a software system designed to support interoperable machine-to-machine interaction over a network". They allow a connection to be established between two computers regardless of operating system or programming language. As long as both sides recognize the XML protocol used, they can communicate. There can be a human involved or not.
 
-###Chapter 10 Exercises
+### Chapter 10 Exercises
 
 Do the end-of-chapter exercises for each chapter of the book by following the link in the on-line syllabus.
