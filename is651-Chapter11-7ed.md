@@ -42,7 +42,7 @@ The comment numbers are referenced below:
 
 1.  As usual, we must include the library code for use in the     program.
 2.  I have used an RSS feed from the Washington Post sports. One can, of course, substitute the URL for any feed here. You should go to the feed URL and see that it is typically transformed by default in your web browser, but the program receives the XML. You can see this by using curl from the command-line as:
-    
+     
     `curl http://feeds.washingtonpost.com/rss/sports`
     
     You will see the XML feed rather than the HTML that your browser displays.
@@ -65,7 +65,7 @@ A push parsing model is a model where the parser pushes parsing events to the ap
 
 A pull parsing mode is a model in which the application drives the parser (in contrast to the push model, where the parser drives the application), by pulling parsed XML constructs from the parser one by one, according to its needs. A Pull parser returns XML events to a client on request. An example of a pull parser is StAX (streaming API for XML) which is commonly used in java frameworks for web services.
 
-###Mashups
+### Mashups
 
 A mashup is an application that uses and combines data from two or more sources to create new services. They are typically deployed on the web by creating a web browser-based application that requests data from the sources using web services and then combines them in such a way as to add value. You can see that REST APIs make this an efficient way to create powerful applications. There are many consumer-oriented mashups such as ones that use data from a source and then overlay it on google maps using location information. Business mashups are also common for combined information from various sources for business intelligence purposes. Mashups can be (most typically) client-based as are the ones that aggregate data in the web browser. They can also be server-based,
 however, where the server aggregates the data and sends it to the client in the combined format. This is the way that an older technology called portals works. They are the same thing as a mashup, but pre-date the use of the web. The on-line course syllabus has links to some representative mashups. Mashups are an excellent example of what a SOA offers.
@@ -77,7 +77,7 @@ We can create a simple mashup using RSS from Rolling Stone and the Omdbapi API f
 3. Note that the starter calls the [helper function](https://swe.umbc.edu/~canfield/rest/mashup/omdbapi.txt) that I have written for you.
 <a name="restapi"></a>
 
-###Creating a REST API
+### Creating a REST API
 
 We have been using REST APIs from around the Internet in clients that we created. In this section we want to create our own REST API to the catalog database that we developed in chapter 9. I developed a cdStore service and you made some other kind of catalog available on line. A REST API to the cdStore service will be geared towards program to program processing rather than human users as in chapter 9.  
 
@@ -193,6 +193,6 @@ The methods *put*, *patch*, and *post* require a querystring that is put into th
 
 Note that there is a *wrong* route in the code that violates the rest api rules.  This is to show that one can make an api that works perfectly, but is not conforming to rest api rules.
 
-###Chapter 11 Exercises
+### Chapter 11 Exercises
 
 Do the end-of-chapter exercises for each chapter of the book by following the link in the on-line syllabus.
