@@ -1,8 +1,8 @@
+ 
 
+## Chapter 11 - REST Revisited
 
-##Chapter 11 - REST Revisited
-
-###Introduction
+### Introduction
 
 We discussed the basics of the REST architectural style in chapter 7. We will add a little more detail about the principles and then do several case studies in this chapter using REST and REST APIs in order to make these principles concrete. The principles are:
 
@@ -18,13 +18,13 @@ Furthermore, any cached responses for that URI should expire.
 
 The REST architecture is composed of hierarchical layers. Each layer only sees the next layer that it is connected to. We have seen this behavior with the proxy clients that we have used in previous exercises where an HTML client connects with a PHP proxy client that requests the web service. This reduces complexity and improves scalability with proxy clients, caching, and load balancing.
 
-###RSS Feeds Revisited
+### RSS Feeds Revisited
 
 RSS feeds are really the first REST web service (before it was called that!). A RESTful URL HTTP request gets an XML return. We will use another PHP library to help us manipulate RSS feeds called magpie (http://magpierss.sourceforge.net/). It is an XML parser that works with all versions of RSS. listing 11.3 shows how to use the magpie library in a PHP program. Any library for any language that works with XML web services must use a parser.
 
     < ?php
         require_once 'magpie/rss_fetch.inc'; //1
-        $url = 'http://feeds.washingtonpost.com/rss/entertainment/celebrities'; //2
+        $url = 'http://feeds.washingtonpost.com/rss/sports'; //2
         $rss = fetch_rss($url);
         $i=0;
         echo "Site: ", $rss->channel['title'], "<br>"; //3
@@ -41,9 +41,9 @@ Listing 11.3. A PHP program using the magpie library.
 The comment numbers are referenced below:
 
 1.  As usual, we must include the library code for use in the     program.
-2.  I have used an RSS feed from the Washington Post about movie stars and their ilk. One can, of course, substitute the URL for any feed here. You should go to the feed URL and see that it is typically transformed by default in your web browser, but the program receives the XML. You can see this by using curl from the command-line as:
+2.  I have used an RSS feed from the Washington Post sports. One can, of course, substitute the URL for any feed here. You should go to the feed URL and see that it is typically transformed by default in your web browser, but the program receives the XML. You can see this by using curl from the command-line as:
     
-    `curl http://feeds.washingtonpost.com/rss/entertainment/celebrities`
+    `curl http://feeds.washingtonpost.com/rss/sports`
     
     You will see the XML feed rather than the HTML that your browser displays.
 3.  Magpie parses the XML of the feed into PHP arrays. That is how the code can address tags using array notation such as `channel['title']`. Note that magpie returns a PHP object and then uses the arrow notation to access each tag as in: `$rss->channel['title']`.
