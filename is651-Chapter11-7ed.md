@@ -20,7 +20,7 @@ The REST architecture is composed of hierarchical layers. Each layer only sees t
 
 ### RSS Feeds Revisited
 
-RSS feeds are really the first REST web service (before it was called that!). A RESTful URL HTTP request gets an XML return. We will use another PHP library to help us manipulate RSS feeds called magpie (http://magpierss.sourceforge.net/). It is an XML parser that works with all versions of RSS. listing 11.3 shows how to use the magpie library in a PHP program. Any library for any language that works with XML web services must use a parser.
+RSS feeds are really the first REST web service (before it was called that!). A RESTful URL HTTP request gets an XML return. One PHP library used to manipulate RSS feeds is called called magpie (http://magpierss.sourceforge.net/). It is an XML parser that works with all versions of RSS. listing 11.3 shows how to use the magpie library in a PHP program. Any library for any language that works with XML web services must use a parser.
 
     < ?php
         require_once 'magpie/rss_fetch.inc'; //1
@@ -70,16 +70,9 @@ A pull parsing mode is a model in which the application drives the parser (in co
 A mashup is an application that uses and combines data from two or more sources to create new services. They are typically deployed on the web by creating a web browser-based application that requests data from the sources using web services and then combines them in such a way as to add value. You can see that REST APIs make this an efficient way to create powerful applications. There are many consumer-oriented mashups such as ones that use data from a source and then overlay it on google maps using location information. Business mashups are also common for combined information from various sources for business intelligence purposes. Mashups can be (most typically) client-based as are the ones that aggregate data in the web browser. They can also be server-based,
 however, where the server aggregates the data and sends it to the client in the combined format. This is the way that an older technology called portals works. They are the same thing as a mashup, but pre-date the use of the web. The on-line course syllabus has links to some representative mashups. Mashups are an excellent example of what a SOA offers.
 
-We can create a simple mashup using RSS from Rolling Stone and the Omdbapi API for movies. We will go over this example in lecture in detail using the following files. Note that for any php file here, you can replace the .php with .txt to see the code (except for the first final hw one!).
-
-1. Here is the <em>final</em> mashup that we are doing for hw [here](https://swe.umbc.edu/~canfield/rest/mashup/omdbapi_mashup_final2.php).
-2. Here is a <em>starter</em> file for you to modify [here](https://swe.umbc.edu/~canfield/rest/mashup/omdbapi_mashup_starter2.php). Be sure to make the url change each time to reflect a different title and [urlencode](http://www.w3schools.com/tags/ref_urlencode.asp) the title using the built-in [php function](http://php.net/manual/en/function.urlencode.php).
-3. Note that the starter calls the [helper function](https://swe.umbc.edu/~canfield/rest/mashup/omdbapi.txt) that I have written for you.
-<a name="restapi"></a>
-
 ### Creating a REST API
 
-We have been using REST APIs from around the Internet in clients that we created. In this section we want to create our own REST API to the catalog database that we developed in chapter 9. I developed a cdStore service and you made some other kind of catalog available on line. A REST API to the cdStore service will be geared towards program to program processing rather than human users as in chapter 9.  
+We have been using REST APIs from around the Internet in clients that we created. This section presents an example of how to create our own REST API to the catalog database that we developed in chapter 9. I developed a cdStore service and you made some other kind of catalog available on line. A REST API to the cdStore service will be geared towards program to program processing rather than human users as in chapter 9.  
 
 Every rest api has at least 5 cases (6 with PATCH) for CRUD (create, read, update, delete):
 
@@ -95,7 +88,7 @@ All other combinations are illegal.  The php program must detect which actual ht
                 return 'Hello '.$app->escape($name);
         }); 
 
-All requests go to the single file *index.php* and then the program parses the query string to detect any record ids or parameters.  This called a *router* because it is a single point of entry to the framework that decides what to call or sometimes called a *front controller*. Typically a [*.htaccess file*](http://en.wikipedia.org/wiki/Rewrite_engine) would be used to hide the index.php and allow the request to have a pretty url like `http://host/web/hello/kip` instead of `http://host/web/index.php/hello/kip`.
+All requests go to the single file *index.php* and then the program parses the query string to detect any record ids or parameters.  This is called a *router* because it is a single point of entry to the framework that decides what to call or sometimes called a *front controller*. Typically a [*.htaccess file*](http://en.wikipedia.org/wiki/Rewrite_engine) would be used to hide the index.php and allow the request to have a pretty url like `http://host/web/hello/kip` instead of `http://host/web/index.php/hello/kip`.
 
 Here is a rest api written in silex for the previous 'grade roster' application database:
 
@@ -184,7 +177,7 @@ Here is a rest api written in silex for the previous 'grade roster' application 
 
         $app->run();
 
-Implement this and try each of the *method calls*. The following shows you two examples of using curl from the command line to access the rest api where I have called my router *rest.php* that contains the rest api code.  The router can be called anything although many times it will be index.php.  Install or use [curl](https://curl.haxx.se/) on your own computer rather than using it on gl.  Alternatively, you can open a free  [codeanywhere.com](https://codeanywhere.com) account and use the command-line there - see chapter 12. Even if you use your own computer for curl, create a php workspace in codeanywhere and share it with me at this time.
+You could implement this and try each of the *method calls*. The following shows you two examples of using curl from the command line to access the rest api where I have called my router *rest.php* that contains the rest api code.  The router can be called anything although many times it will be index.php.  Install or use [curl](https://curl.haxx.se/) on your own computer rather than using it on gl.  Alternatively, you can open a free  [codeanywhere.com](https://codeanywhere.com) account and use the command-line there. Even if you use your own computer for curl, create a php workspace in codeanywhere and share it with me at this time.
 
 -  `curl -v -X GET 'https://swe.umbc.edu/~canfield/silex/web/rest.php/grades'`
 -  `curl -v -X POST 'https://swe.umbc.edu/~canfield/silex/web/rest.php/grades' -d 'name=joe&grade=3'`
@@ -193,6 +186,4 @@ The methods *put*, *patch*, and *post* require a querystring that is put into th
 
 Note that there is a *wrong* route in the code that violates the rest api rules.  This is to show that one can make an api that works perfectly, but is not conforming to rest api rules.
 
-### Chapter 11 Exercises
 
-Do the end-of-chapter exercises for each chapter of the book by following the link in the on-line syllabus.
