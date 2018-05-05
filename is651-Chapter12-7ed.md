@@ -1,11 +1,11 @@
-  
+   
 ## Chapter 12 - Microservices Revisited
 
 ### Introduction
 
 We continue to use this [introduction to microservices](https://www.nginx.com/blog/introduction-to-microservices) from [nginx](https://www.nginx.com/), sections 2-3 (cached pdf [here](../Microservices_Designing_Deploying.pdf)). Many microservices use binary protocols rather than the text-based ones we have studied in this course. See [Beyond REST](https://dzone.com/articles/beyond-rest) for an introduction to these protocols which we will discuss and demo in class.  Distributed databases are a good example of distributed systems in the wild and we will do a short introduction to these and see how they implement the concepts we have discussed in this course.
 
-###Distributed Databases
+### Distributed Databases
 
 There has been a recent revolution in databases associated with the rise of distributed systems and especially the web.   Many of these database systems are called post-relational because since the start of market-dominance of relational database management systems (rdbms), they have been virtually the only type of database used.  This recent revolution happened due to the following problems for rdbms:
 
@@ -29,7 +29,7 @@ To quote Michael Stonebraker: "Probably the most important thing that has happen
 
 OldSQL includes most of the large rdbms companies today such as Oracle, IBM, and Microsoft.  They remain the most general purpose dbmss and still have the largest installed base.  They are not going anywhere in the near future.  They are most hobbled by the three problems listed above.  Their performance on online transaction processing (OLTP) is good but not very scalable, they can only store relations as tables, and joins do not work in widely distributed systems.  They are typically deployed as large single nodes or as tight LAN clusters and they cost a large amount of money to increase scalability.  They are completely general purpose in that they do OK at all types of dbms tasks and they are very good at ACID which is a very good thing.  They have been used for the last 30 years as the basis for almost all dbms use cases.  For example, even data warehouses were based on rdbms using a [star or snowflake schema](https://en.wikipedia.org/wiki/Star_schema) even though they denormalized the data and did no OLTP.
 
-####NoSQL
+#### NoSQL
 
 NoSQL grew out of the dissatisfaction of large web companies with OldSQL for widely distributed web applications.  Companies like Facebook, Twitter, Amazon, and Google developed and open-sourced their own dbmss to solve the three problems.  We will use an [external reading to get a brief introduction to NoSQL](https://www.thoughtworks.com/insights/blog/nosql-databases-overview) - this reading is <em>testable</em>.  That same information is in this [video introduction](https://www.youtube.com/watch?v=qI_g07C_Q5I) from Martin Fowler.  NoSQL gets performance and good distributed behaviour by limiting ACID in favor of BASE. Additionally, many NoSQL dbmss do not have standard query languages like SQL and one must write code (java, javascript, etc.) to query them.  Recall from chapter 8 when we studied XQuery, native XML databases were mentioned.  These are a type of NoSQL Document databases.
 
