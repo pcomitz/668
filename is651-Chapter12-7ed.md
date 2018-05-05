@@ -1,7 +1,7 @@
-
+ 
 ##Chapter 12 - Microservices Revisited
 
-###Introduction
+### Introduction
 
 We continue to use this [introduction to microservices](https://www.nginx.com/blog/introduction-to-microservices) from [nginx](https://www.nginx.com/), sections 2-3 (cached pdf [here](../Microservices_Designing_Deploying.pdf)). Many microservices use binary protocols rather than the text-based ones we have studied in this course. See [Beyond REST](https://dzone.com/articles/beyond-rest) for an introduction to these protocols which we will discuss and demo in class.  Distributed databases are a good example of distributed systems in the wild and we will do a short introduction to these and see how they implement the concepts we have discussed in this course.
 
@@ -25,7 +25,7 @@ This chapter appears very short be be aware that much of the content is in exter
 
 To quote Michael Stonebraker: "Probably the most important thing that has happened in the DBMS landscape is the death of <em>one size fits all</em>. Until the early 2000's the traditional disk-based row-store architecture was omnipresent. In effect, the commercial vendors had a hammer and everything was a nail."  We discuss these changes below.
 
-####OldSQL
+#### OldSQL
 
 OldSQL includes most of the large rdbms companies today such as Oracle, IBM, and Microsoft.  They remain the most general purpose dbmss and still have the largest installed base.  They are not going anywhere in the near future.  They are most hobbled by the three problems listed above.  Their performance on online transaction processing (OLTP) is good but not very scalable, they can only store relations as tables, and joins do not work in widely distributed systems.  They are typically deployed as large single nodes or as tight LAN clusters and they cost a large amount of money to increase scalability.  They are completely general purpose in that they do OK at all types of dbms tasks and they are very good at ACID which is a very good thing.  They have been used for the last 30 years as the basis for almost all dbms use cases.  For example, even data warehouses were based on rdbms using a [star or snowflake schema](https://en.wikipedia.org/wiki/Star_schema) even though they denormalized the data and did no OLTP.
 
@@ -33,11 +33,11 @@ OldSQL includes most of the large rdbms companies today such as Oracle, IBM, and
 
 NoSQL grew out of the dissatisfaction of large web companies with OldSQL for widely distributed web applications.  Companies like Facebook, Twitter, Amazon, and Google developed and open-sourced their own dbmss to solve the three problems.  We will use an [external reading to get a brief introduction to NoSQL](https://www.thoughtworks.com/insights/blog/nosql-databases-overview) - this reading is <em>testable</em>.  That same information is in this [video introduction](https://www.youtube.com/watch?v=qI_g07C_Q5I) from Martin Fowler.  NoSQL gets performance and good distributed behaviour by limiting ACID in favor of BASE. Additionally, many NoSQL dbmss do not have standard query languages like SQL and one must write code (java, javascript, etc.) to query them.  Recall from chapter 8 when we studied XQuery, native XML databases were mentioned.  These are a type of NoSQL Document databases.
 
-####Big Data
+#### Big Data
 
 Big Data systems like [Hadoop](https://en.wikipedia.org/wiki/Apache_Hadoop) and [Spark](https://en.wikipedia.org/wiki/Apache_Spark) are mostly outside the scope of our discussion here, but we want to know how they fit in to the post-relational environment.  They are batch-oriented systems for data analysis.  The rise of the web and distributed systems in general have massively increased the amount of data that organizations collect and wish to analyze.  This data is in  all types of semi- or un- structured formats.  So these systems really just define a specialized distributed file system ([HDFS](https://en.wikipedia.org/wiki/Apache_Hadoop#HDFS)) such as we have discussed in this course but with the ability to handle much larger files, for example, a file can be bigger that the disk on any node in the distributed system.  Then algorithms like [mapreduce](https://en.wikipedia.org/wiki/MapReduce) are used to process the files for analytic data sets.  These results are often stored in wide-column NoSQL databases (such as HBase) which have largely replaced using rdbms for data warehouses.
 
-####NewSQL
+#### NewSQL
 
 NoSQL was a reaction to the problems of OldSQL and did solve some problems.  But:
 
@@ -46,7 +46,7 @@ NoSQL was a reaction to the problems of OldSQL and did solve some problems.  But
 
 So NewSQL is a bunch of startup dbms companies that retain ACID for OLTP and SQL for queries.  The major ways they do this is by changing the disk-based architecture of OldSQL to in-memory architectures.  They go some way towards making rdbms more distributable, but only so much can be done.  One cannot override the laws of physics so that widely distributed nodes can act like a single node (CAP Theorem).  For example, distributed joins are always going to be slow and difficult.  A good introduction to these issues are in this [video from Micheal Stonebreaker](https://www.usenix.org/conference/lisa11/newsql-vs-nosql-new-oltp), a pioneer of rdbms in general, MIT professor, and the head of one of the NewSQL startups [Voltdb](https://voltdb.com/).
 
-####SoWhat
+#### SoWhat
 
 This is a currenly active area that is rapidly changing. These are my take-aways from our readings/videos:
 
@@ -165,9 +165,9 @@ The difference between strong and eventual consistency is commonly charaterised 
 
 Figure 11.3. ACID vs. BASE
 
-####NoSQL MongoDB Case Studies (for the homework)
+#### NoSQL MongoDB Case Studies (for the homework)
 
-####PHP5 on codeanywhere.com
+#### PHP5 on codeanywhere.com
 
 We will use the cloud provider [codeanywhere](https://codeanywhere.com/) for MongoDB. Cloud providers give us software as service on the web typically for a fee, but also usually offer a free starter service (which we will use). Codeanywhere has a built in editor, web server, and unix command line with a lot of software available for us to use.
 
@@ -191,7 +191,7 @@ This will not work on gl because they have not installed the cli (command-line i
 <b>Important</b> - Everybody is <em>required</em> to share the workspace in with my email address for `edit`. This gives me the rights to see your account and will allow me restart your app since your free workspace is a virtual machine that goes to sleep when you are not using it. Right click on your top-level project and choose `share project`.
 </div>
 
-#####MongoDB
+##### MongoDB
 
 We will get a brief introduction to [MongoDB](https://www.mongodb.org/) by doing a couple of tutorials from the syllabus notes.  This document NoSQL database illustrates many concepts we have seen in our reading: it is schemaless, uses javascript as a query language, sharding, replication, and JSON as a serialization.  Codeanywhere workspaces can have access to mongodb, but you must install it with the following:
 
@@ -245,7 +245,7 @@ cabox@box-codeanywhere:~/workspace$
 
 Listing 12.1.  MongoDB shell commands.
 
-#####PHP with MongoDB
+##### PHP with MongoDB
 
 Next we will see how to use mongodb from a php application just as we used mysql in a previous chapter.  Use the tutorial [Introduction to MongoDB](http://www.sitepoint.com/introduction-to-mongodb/) which creates a blog. You <em>must install the mongo driver</em> as described above using the [pecl](https://en.wikipedia.org/wiki/PEAR#PECL) php package manager so that php can connect to mongodb.  You will create a static blog in the tutorial that displays using print_r that shows the underlying php data structure for educational purposes.  Obviously, in real life, one would display it differently as you will in the homework (deliverables given in the homework instructions).  Here is an example program using the tutorial.  Make sure you know exactly how it works and what the output shows. Note that one can uncomment the [drop() statement](https://docs.mongodb.org/manual/reference/mongo-shell/) to allow it to run clean every time (or use <em>db.posts.drop()</em> from the mongo command line).
 
@@ -324,6 +324,6 @@ The mongodb looks like this after a run of listing 12.2 from the command-line:
 Listing 12.3.  Mongodb after listing 12.2.
 
 
-###Chapter 12 Exercises
+### Chapter 12 Exercises
 
 Do the end-of-chapter exercises for each chapter of the book by following the link in the on-line syllabus.
