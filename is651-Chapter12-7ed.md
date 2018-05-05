@@ -56,7 +56,7 @@ This is a currenly active area that is rapidly changing. These are my take-aways
 - NewSQL will survive for distributed OLTP.
 
 And these changes will probably happen:
-
+ 
 - OldSQL companies will lose their grip on OLTP but remain as general purpose dbms and possibly change to NewSQL.
 - NoSQL will move towards standard query languages that look a lot like SQL.
 - NoSQL and NewSQL will work together for their niche use cases.
@@ -84,7 +84,7 @@ Because database volume has gone up and systems have become distributed, there h
 
 <b>Sharding</b> - Splitting up a large table of data horizontally i.e. row-wise. A table containing 100s of millions of rows may be split into multiple tables containing 1 million rows each. Each of the tables resulting from the split will be placed into a separate database/server. Sharding is done to spread load (distribution) and improve access speed (performance). Facebook/twitter tables fit into this category. This is also known as horizontal partitioning so used for horizontally scaling applications. 
 
-####Sharding Methods
+#### Sharding Methods
 
 Sharding is often done automatically based on key. One way to categorize sharding is algorithmic. Algorithmic sharding distributes data by its sharding function.
 
