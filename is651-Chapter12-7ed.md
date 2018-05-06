@@ -201,13 +201,9 @@ We will get a brief introduction to [MongoDB](https://www.mongodb.org/) by doing
 
 3. install mongodb - *https://docs.mongodb.com/v3.2/tutorial/install-mongodb-on-ubuntu/*. Use the 4 steps to install mongodb for *linux/ubuntu*. Use the further steps to start/stop mongodb. Once you have started the db, you can leave it running - no need to stop it after use.
 
-4. install the mongo php driver in 3 steps -  *http://www.bictor.com/2015/02/15/installing-mongodb-for-php-in-ubuntu-14-04/* - the only change is that you edit the php.ini file at /etc/php5/apache2 to add the extension=mongo.so line (not mongo.ini). install nano with sudo apt-get install nano and then sudo nano the php.ini and add the separate line anywhere in the file. sudo gives superuser access but does not require a password for codeanywhere. you restart the servers below to initiate the new settings.
+4. restart mongodb - *sudo service mongod restart*
 
-5. restart apache2 - *sudo service apache2 restart*
-
-6. restart mongodb - *sudo service mongod restart*
-
-7. use the `share project` menu item (or right-click the top workspace) to invite me with *edit* rights. be sure to share the whole project container with me and not just a file.
+5. use the `share project` menu item (or right-click the top workspace) to invite me with *edit* rights. be sure to share the whole project container with me and not just a file.
 
 Issue the command <em>mongo</em> to start the command-line client and get the '>' prompt where you can issue mongodb commands in javascript.  You can stop the client with <em>control-d</em> or typing *quit()*.  We will be using just a single copy of mongdb in our exercises, but see the docs for a brief introduction to how it is [replicated](https://docs.mongodb.org/manual/core/replication-introduction/) and [sharded](https://docs.mongodb.org/manual/core/sharding-introduction/). Remember that mongodb is created to be a distributed database.  
 
