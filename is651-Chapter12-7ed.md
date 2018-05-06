@@ -171,7 +171,7 @@ We will use the cloud provider [codeanywhere](https://codeanywhere.com/) for Mon
 
 Sign up for a free account on codeanywhere at this time and create a php/ubuntu workspace. You can see the basics in their [documentation](http://docs.codeanywhere.com/).
 
-Make sure you can run web pages in a browser, edit the files, and know how to access the command line. For example, make sure you can change the displayed string in the php file and see the result in a browser and that you can see the file from the command line.
+To verify functionality you can run web pages in a browser, edit the files, and use the command line by opening an ssh terminal. For example, make sure you can change the displayed string in the php file and see the result in a browser and that you can see the file from the command line.
 
 You can see that codeanywhere is running php5 from the command line (using php-cli) as:
 
