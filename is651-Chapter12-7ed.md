@@ -241,7 +241,9 @@ Listing 12.1.  MongoDB shell commands.
 
 ##### PHP with MongoDB
 
-Next we will see how to use mongodb from a php application just as we used mysql in a previous chapter.  The tutorial [Introduction to MongoDB](http://www.sitepoint.com/introduction-to-mongodb/) shows how to create a blog. You <em>must install the mongo driver</em> as described above using the [pecl](https://en.wikipedia.org/wiki/PEAR#PECL) php package manager so that php can connect to mongodb if you wish to try this.  You will create a static blog in the tutorial that displays using print_r that shows the underlying php data structure for educational purposes.  Obviously, in real life, one would display it differently  Here is an example program using the tutorial.  Make sure you know exactly how it works and what the output shows. Note that one can uncomment the [drop() statement](https://docs.mongodb.org/manual/reference/mongo-shell/) to allow it to run clean every time (or use <em>db.posts.drop()</em> from the mongo command line).
+Next we will see how to use mongodb from a php application just as we used mysql in a previous chapter.  The tutorial [Introduction to MongoDB](http://www.sitepoint.com/introduction-to-mongodb/) shows how to create a blog using mongo. If you wish to try this  you  must install the mongo driver using the [pecl](https://en.wikipedia.org/wiki/PEAR#PECL) php package manager so that php can connect to mongodb.  
+
+In the tutorial you will create a static blog that displays using print_r that shows the underlying php data structure for educational purposes.  Obviously, in real life, one would display it differently  Here is an example program using the tutorial.  Make sure you know how it work. Note that one can uncomment the [drop() statement](https://docs.mongodb.org/manual/reference/mongo-shell/) to allow it to run clean every time (or use <em>db.posts.drop()</em> from the mongo command line).
 
 <pre>
 &lt;?php
