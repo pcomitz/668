@@ -167,8 +167,6 @@ Figure 11.3. ACID vs. BASE
 
 #### NoSQL MongoDB Case Studies (for the homework)
 
-#### PHP5 on codeanywhere.com
-
 We will use the cloud provider [codeanywhere](https://codeanywhere.com/) for MongoDB. Cloud providers give us software as service on the web typically for a fee, but also usually offer a free starter service (which we will use). Codeanywhere has a built in editor, web server, and unix command line with a lot of software available for us to use.
 
 Sign up for a free account on codeanywhere at this time and create a php/ubuntu workspace. You can see the basics in their [documentation](http://docs.codeanywhere.com/).
@@ -243,7 +241,7 @@ Listing 12.1.  MongoDB shell commands.
 
 ##### PHP with MongoDB
 
-Next we will see how to use mongodb from a php application just as we used mysql in a previous chapter.  Use the tutorial [Introduction to MongoDB](http://www.sitepoint.com/introduction-to-mongodb/) which creates a blog. You <em>must install the mongo driver</em> as described above using the [pecl](https://en.wikipedia.org/wiki/PEAR#PECL) php package manager so that php can connect to mongodb.  You will create a static blog in the tutorial that displays using print_r that shows the underlying php data structure for educational purposes.  Obviously, in real life, one would display it differently as you will in the homework (deliverables given in the homework instructions).  Here is an example program using the tutorial.  Make sure you know exactly how it works and what the output shows. Note that one can uncomment the [drop() statement](https://docs.mongodb.org/manual/reference/mongo-shell/) to allow it to run clean every time (or use <em>db.posts.drop()</em> from the mongo command line).
+Next we will see how to use mongodb from a php application just as we used mysql in a previous chapter.  The tutorial [Introduction to MongoDB](http://www.sitepoint.com/introduction-to-mongodb/) shows how to create a blog. You <em>must install the mongo driver</em> as described above using the [pecl](https://en.wikipedia.org/wiki/PEAR#PECL) php package manager so that php can connect to mongodb if you wish to try this.  You will create a static blog in the tutorial that displays using print_r that shows the underlying php data structure for educational purposes.  Obviously, in real life, one would display it differently  Here is an example program using the tutorial.  Make sure you know exactly how it works and what the output shows. Note that one can uncomment the [drop() statement](https://docs.mongodb.org/manual/reference/mongo-shell/) to allow it to run clean every time (or use <em>db.posts.drop()</em> from the mongo command line).
 
 <pre>
 &lt;?php
