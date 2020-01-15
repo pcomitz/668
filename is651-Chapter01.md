@@ -1,6 +1,6 @@
 
 
-##Chapter1 - Introduction
+## Chapter1 - Introduction
 
 This text covers distributed systems for students in Information Systems programs. It has two major sections for architecture and implementation and a third section for advanced topics. Architecture refers to a broad view of the area to include the basic concepts and technology of distributed systems. We will look at the history of distributed systems in computing and concentrate on service-oriented architectures (SOA). As a side-effect of this treatment, we will also learn basic XML and markup language technology. The book includes many practical exercises and projects in XML. Chapter 2 covers the history of distributed systems, Chapter 3 reviews Internet and web technology. Chapter 4 covers SOAP and using XML Web Services for SOA while chapters 5 and 6 extend this treatment to the web services description language (WSDL) and other web services standards. Finally, chapter 7 covers representational state transfer (REST) web services.
 
@@ -14,12 +14,12 @@ Information Systems programs have developed separately from similar programs in 
 
 All other areas of study build on these foundations. This book assumes a basic semester long course in each of these areas. This book builds upon this for a more complex treatment of distributed systems. In a real sense, the study of distributed systems is the core technical area of Information Systems since all such systems are distributed. A short review of some relevant topics from those previous courses follows.
 
-###Programming
+### Programming
 
 This course assumes a basic object-oriented programming course, but does not assume that it was in any specific language. We will learn the relevant details of any programming language that we use in the second half of this book, and the focus will be on reading code and making minor modifications to it rather than a full treatment of any language.
 Being able to read and understand the logic and approach of the simple programs will add considerably to your maturity and understanding of distributed systems.
 
-###Networking
+### Networking
 
 Recall the OSI seven layer model given in figure 1.1. We will be primarily concerned with the Host layers from the left-hand column in figure 1.1. This is because we will be discussing services and hosts rather than the networking details of how a packet gets from one host to another. But of course, it is important to understand that as a pre-
 requisite. Let's start at the bottom at layer 2.
@@ -60,11 +60,11 @@ Figure 1.3. The TCP header.
 Figure 1.3 shows an example of a simplified header structure for TCP.
 The header is, of course, a linear string of bits and the table structure in figure 1.3 presents that with each row being 32-bits. The destination port number, for example is 16-bits. So the sender creates this packet and puts port 80 in the TCP header. That way, the receiving host can look in the TCP packet and find that communication from its peer layer.
 
-###Databases
+### Databases
 
 Databases are essential for distributed systems to maintain state for distributed applications. Relational databases (RDB) are most commonly used and were the subject of your introductory database course. We will be primarily concerned with RDB in this book. After a period of almost exclusive use of RDB in distributed systems, there has been a recent move to use different types of databases such as native XML databases and the so-called 'not only SQL' (noSQL) databases for web applications in addition to RDB.
 
-###Distributed Systems
+### Distributed Systems
 
 Distributed systems use these building blocks of networks, databases,
 and applications to create a whole that is greater than its parts. This usefulness comes at a cost of some complexity and that is what we will study in this course. We will look at the following concepts in general and for specific technological solutions:
@@ -92,7 +92,7 @@ consistency, scalability, performance, and security are complex to deliver. This
 
 The final section of this chapter covers the computing environment that will be presupposed by exercises later in the book. This will require elementary command-line knowledge of unix-like operating systems using secure terminal emulation and secure file transfer.
 
-###The UNIX command-line
+### The UNIX command-line
 
 The environment described here matches that for the Linux student accounts on the gl host at the University of Maryland, UMBC, but is basically the same for any account with a unix-like operating system.
 
@@ -112,14 +112,14 @@ You can use this from the command-line, but most of the time, you will want to u
 
 Figure 1.4. WinSCP
 
-###The SSH Client
+### The SSH Client
 
 SSH stands for secure shell and is a network protocol for setting up a secure channel between two hosts so that one may get a terminal emulation for the remote computer. This way, you can issue commands at the command-line as if you were at the remote computer. You will use this to access and issue commands in your account on the remote gl host.
 Two popular examples of SSH clients are Putty and Tera-Term SSH.
 
 Figure 1.5 shows a screen shot of the Putty SSH client for windows. You can see that one enters the remote host name and specifies port 22 which the standard port for SSH. After connection, the command prompt for the remote host appears in a separate window. For windows, you must download and install an SSH client such as Putty. There are many free implementations and they all work the same way. See the syllabus for links to examples of this software. If you are on a Macintosh or Linux client, you have command-line SSH built in to your operating system and no install is needed. Since SSH is secure (encrypted), all data including passwords are protected while on the network. The older non-secure protocol for this was telnet which is forbidden on most hosts now due to security concerns. We review some unix commands that you will use at this remote command-line next.
 
-###UNIX Commands
+### UNIX Commands
 
 Once you open your SSH client on Windows, you use a configuration window as in figure 1.5 to connect to the remote host such as gl.umbc.edu with your password. Then a terminal window will open with a command prompt to the remote host. For the built-in clients on Macintosh or Linux, you open the terminal and use the ssh command at the command line to connect (where $> represents the command prompt from the operating system):
 
@@ -153,7 +153,7 @@ After connection in either case, one needs to know UNIX commands in order to nav
 It is important to try out all these commands in your student account.
 They are very simple and easily understood in context.
 
-####Command: ls
+#### Command: ls
 
 The ls command returns a list of files and directories in the current
 directory.
@@ -183,7 +183,7 @@ This command creates a subdirectory under the current one. You should be able to
 	file1.txt
 	test
 
-####Command: cd
+#### Command: cd
 
 This command changes the directory (with no screen output) and is used to navigate your directory tree. A special character ~ (tilde) is used for your home directory and so you can always use `$>cd ~` to get back to your home directory. This is very handy when navigating deep paths.
 
@@ -192,14 +192,14 @@ This command changes the directory (with no screen output) and is used to naviga
 
 The ls command above has no output since we have just created the test directory and it has no contents. Otherwise it would list the contexts of the test directory that we just entered.
 
-####Command: pwd
+#### Command: pwd
 
 The pwd command shows the current working directory - meaning the one you are in. For example, since we just entered the test directory, that is the current one. The entire path name is displayed as output.
 
 	$>pwd
 	/home/canfield/test
 
-####Command: mv
+#### Command: mv
 
 This command moves a file or directory rather than copies it so that it will no longer exist at the source location. It is also used to rename files in the same directory. So the file1.txt in the root directory is replaced with abc.txt in the test directory with the same file contents as shown below (recall that 2 dots mean the parent directory).
 
@@ -209,7 +209,7 @@ This command moves a file or directory rather than copies it so that it will no 
 
 It gets annoying to always have to use the pwd command to see where you are in the directory tree. See the on-line syllabus for instructions on how to modify your account configuration file (one of those files that begin with a dot) to display the current path inside the command prompt.
 
-####Command: cp
+#### Command: cp
 
 The copy command copies a file from one place to another. Assuming we are still in the newly created test directory:
 
@@ -222,11 +222,11 @@ The copy command copies a file from one place to another. Assuming we are still 
 
 where the file file.txt is copied into the current test directory. Note the use of the dot to represent the current directory.
 
-####Commands for Deletion: rm, rmdir
+#### Commands for Deletion: rm, rmdir
 
 These commands remove (delete) files and directories respectively. For example, `$>rm abc.txt` will delete the file we last put inside the test directory. The rmdir command works similarly, but the directory must be empty for the command to work.
 
-####Commands for File Display: cat, less, head, tail
+#### Commands for File Display: cat, less, head, tail
 
 These commands display a file in various ways. The cat command outputs the contents of file to the screen. The less command does it a page at a time where you can use the spacebar to advance to the next page or the q key to quit. The head and tail commands show just the first few or last few lines of a file respectively. Try these commands on a text file in your account. For example:
 
@@ -235,7 +235,7 @@ These commands display a file in various ways. The cat command outputs the conte
 
 where the abc.txt file contains the single line of text.
 
-####Command: chmod
+#### Command: chmod
 
 The chmod command is used to change the permissions (access rights) of a file or directory. Recall that the ls -l command gives the long listing as follows:
 
@@ -260,12 +260,12 @@ and execute (x). We can combine these symbols using the chmod command to change 
 
 which gives the execute permission for the user/owner, the group, and all others. The plus operator will add permissions and dash (minus operator) will take away permissions. Later in the book we will see a completely different way of changing permissions for distributed file systems such as the andrew file system (AFS). Distributed file systems create a directory tree that can span different hosts on the network while the basic unix directory tree is all on one host.
 
-####Command: pico
+#### Command: pico
 
 The command pico starts a very simple text editor. It is a good way to create and edit text files from the command-line. See the course syllabus for links to documentation for pico. Although it is on the command-line, it is menu driven and so you do not have to remember the key strokes for the commands as in some other text editors. Figure 1.6 shows pico. For example, one would use control-X to exit pico. The ^
 symbol represents the control key on your keyboard.
 
-####Command: wget
+#### Command: wget
 
 The wget command is an easy way of putting a file from the web or ftp server into your account. The following example would get the index.html file from the zaad web server and save it in your current directory.
 
@@ -281,7 +281,7 @@ There are, of course, many more commands and concepts for working with unix-like
 
 Figure 1.6. The pico editor.
 
-####Navigation in your Student Account
+#### Navigation in your Student Account
 
 The gl host (gl.umbc.edu) is where you have your account. See the syllabus for links to the documentation for student accounts. Your account has the following directory structure where the parentheses denote hierarchical levels:
 
@@ -321,6 +321,6 @@ So then you will have 2 different web roots in your account as:
 
 They will probably phase out the www in future.
 
-###Chapter 1 Exercises
+### Chapter 1 Exercises
 
 Do the end-of-chapter exercises for each chapter of the book by following the link in the on-line syllabus. All exercies are in the web page, rather than here in the book. Any time an exercise asks you to put information into a file with a .txt extension, it must be a plain text file. Never use a word processor format.
