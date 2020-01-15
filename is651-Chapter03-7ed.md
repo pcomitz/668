@@ -1,8 +1,8 @@
 
 
-##Chapter 3 - Web Technologies
+## Chapter 3 - Web Technologies
 
-###Introduction
+### Introduction
 
 Since web technology is so central to distributed systems and forms the basis for XML web services, we will review it in broad outline in this chapter. We will cover HTML/CSS, javascript, and web application servers. This is a lot of ground, but our goal here is to understand the technology at a technical level, but not to become expert web programmers or developers. The World Wide Web Consortium (W3C) is the main international standards organization for the World Wide Web. Figure 3.1 shows the basic web architecture.
 
@@ -38,7 +38,7 @@ Importantly, the HTML of the requested file goes into the entity body of the res
 
 Figure 3.3. HTTP headers and body for a response.
 
-###Client-side Web Technologies
+### Client-side Web Technologies
 
 As we already know, HTML is the language of web pages. In this section,
 we will review HTML and the associated client-side technologies of cascading style sheets (CSS), and javascript. All of these are client-side in the sense that they are implemented in interpreters within the web browser. See the syllabus for links and references.
@@ -147,7 +147,7 @@ We are using XHTML for most of the examples in this book, but the most modern ve
 
 which is used for compatibility with current browsers. HTML5 adds many features and new tags to HTML and current browsers are moving to support this new version but that transition is not yet complete. We will examine some of the new features of HTML5 in chapter 8.
 
-###Server-side Web Technologies
+### Server-side Web Technologies
 
 In this section, we will cover server-side web technologies as in figure 3.6. Application servers for the web must have some way of communicating with the web sever. There are three basic methods:
 
@@ -175,7 +175,7 @@ Figure 3.7. The servlet container.
 
 A currently popular server-side scripting language that typically works as a server plug-in via an API such as the Apache module API is PHP. PHP was introduced in 1995 and the acronym originally stood for 'personal home page.' The developers later changed it to be a recursive acronym to stand for php hypertext processor as a kind of nerdy joke. PHP is peculiar in that it has a built in template system for including the PHP code in a web page. This means that one can mix HTML and program code in a page by using special template tags. For example, a special tag is defined as (commonly) <% ... %> were the dots are replaced by program code. Because of the API and the file extension of the web page, a web server knows to pass the contents of these tags to the plug-in for processing. The language plug-in processes the template wrapped code and so that the final page contains only HTML and other client-side code for the web server to return to the client web browser. The special tags for PHP are included natively in the specification for PHP. Many other languages use the same template concept but the template languages are separate. For example, Java server pages (JSP) allows java code to be processed in this way in a servlet container and Microsoft's active server pages (ASP) wraps visual basic (vbscript) or javascript for server-side processing. A PHP web page has a .php extension, the JSP page has .jsp, and the ASP has .asp(x). We will cover PHP in a little bit of detail and use it in our exercises throughout this book since it is available on gl.
 
-###PHP
+### PHP
 
 The PHP Basic tutorial on w3chools shows the basic syntax and examples that you can use to familiarize yourself with the language. Again, the goal is to see how things are put together and not to memorize anything or become an expert. Note that the language constructs of PHP, like any programming language, are similar to the whatever one you have already learned. You should be able to read a commented PHP program and look up anything you need to understand it. So we will concentrate here on important concepts using an example (all examples are live on the syllabus).
 
@@ -258,6 +258,6 @@ This has been a whirlwind tour of client-side and server-side web technologies, 
 
 For the SOAP (chapters 4-6, 10) and REST (chapters 7, 11) web services that we now turn our attention to, it is important to understand that they are not the same as regular operations on the web as described in this chapter, but they use the same technology and infrastructure. Normal web operations are for human users and web services are communicating computer programs in a distributed system. A good way to think of it is as implementing all the patterns from chapter 2 on the web infrastructure described in this chapter 3 under a service-oriented architecture.
 
-###Chapter 3 Exercises
+### Chapter 3 Exercises
 
 Do the end-of-chapter exercises for each chapter of the book by following the link in the on-line syllabus.
