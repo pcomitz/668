@@ -1,8 +1,8 @@
 
 
-##Chapter 6 - WS-*
+## Chapter 6 - WS-*
 
-###Introduction
+### Introduction
 
 The three protocols we have covered to this point are sometimes called the first-generation XML web services. SOAP is the wire protocol and WSDL documents the service. They are also functional protocols in that they are immediately concerned with basic communication of messages.
 UDDI can act as a registry and can be considered the first non-functional standard. Complex information systems, however, require many more non-functional services that support the functional ones.
@@ -128,7 +128,7 @@ Listing 6.2. portType.
 
 WS-CDL is similar, but with extra tags that are concerned with the between organization processes.
 
-###RSS
+### RSS
 
 We now turn to a different family of XML vocabularies under the heading of really simple syndication as RSS is most commonly known. It has also been known as rich site summary and RDF site summary. You are probably familiar with RSS as a news feed that is associated with blogs. Each blog entry is an item in the XML of RSS and makes it easy to download all the blog entries in one file. RSS is generally useful, however, in information systems. For example, in the BPEL runtime, we could use an RSS feed to monitor the activity of status messages in the workflow. In fact, RSS can be considered an early web service since a web request results in the return of an XML file rather than a web page. It will really be what we will call a REST web service in chapter 7. There are multiple versions, however, and RSS has a rather complicated history.
 
@@ -171,7 +171,7 @@ A sample of RSS 2.0 is given in listing 6.3. You can see that it is designed for
 
 Listing 6.3. RSS 2.0.
 
-###Server-side XSLT
+### Server-side XSLT
 
 We saw client-side XSLT in chapter 5, but most XSLT processing is done on the server. Most programming languages have extensive libraries for dealing with XML, including XSLT processing. We will look at SAXON (http://saxon.sourceforge.net/), which is a java-based XSLT processor.
 
@@ -231,6 +231,6 @@ Figure 6.6. HTML from the DocBook XSLT.
 
 Listing 6.4. DocBook XML.
 
-###Chapter 6 Exercises
+### Chapter 6 Exercises
 
 Do the end-of-chapter exercises for each chapter of the book by following the link in the on-line syllabus.
