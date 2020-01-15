@@ -17,7 +17,7 @@ Let's review how the networking works for a web request. The web bowser uses the
 
 The http:// denotes the protocol to be used, clearly HTTP here. The zaad2.umbc.edu is the host name for the web server. Remember that this must be translated to the IP address by the DNS before the request can be sent. The IP address in this case is 130.85.90.82. The :80 is the port number. Since port 80 is the default port number for web servers,
 it can be optionally omitted, but web servers can actually be installed on any other free port and in those cases it must be included. The 'path/file.html' denotes the full pathname from the root of the web directory to the requested file. For example, in your gl account, it would be the full path from under the swe2016 directory. If a file is in the root of the web directory, then the full path is just the bare file name. Web servers can be configured to have a default file returned if no filename is requested and by convention that is usually index.html.
-So the URL http://zaad2.umbc.edu/ will return the file index.html from a web server root on port 80. URLs are uniform resource locators and are a type uniform resource identifiers (URIs). The other type of URI is a uniform resource name (URN).
+So the URL https://swe.umbc.edu/ will return the file index.html from a web server root on port 80. URLs are uniform resource locators and are a type uniform resource identifiers (URIs). The other type of URI is a uniform resource name (URN).
 
 The client web browser then sends the HTTP request to the web server.
 Figure 3.2 shows the simplified header structure and body of the HTTP request.
