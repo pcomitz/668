@@ -14,7 +14,7 @@ Figure 2.1. Timeline for distributed systems.
 
 We will cover all these architectures in this chapter, but the balance of the book will be concerned with N-tier systems and services. The history does not, of course, exactly match the decades listed in our timeline, but it is a good approximation for us to locate the various eras.
 
-###Mainframes (1960s)
+### Mainframes (1960s)
 
 At least in the beginning, a commercial mainframe meant that there was only one central processing unit (CPU) for use in an organization. One had to write programs using punch cards (see figure 2.2) and see the output from a printer. A punch card is a stiff piece of paper that has digital information encoded on it by the presence or absence of holes in predefined positions on the card. It was actually an evolution of technology used for controlling textile looms developed in the late 19th century. One used a key-punch machine with a keyboard to type in the program which ended up as holes in a stack of cards. Then one fed the cards into a card reader machine that read the cards and sent the program to processing on the mainframe. After a wait while one's job sat in a queue on the mainframe, it was processed and the output printed. A computer operator typically took the printout and put it into a mailbox-
 like cubby where one could retrieve it.
