@@ -1,8 +1,8 @@
 
 
-##Chapter 6 - WS-*
+## Chapter 6 - WS-*
 
-###Introduction
+### Introduction
 
 The three protocols we have covered to this point are sometimes called the first-generation XML web services. SOAP is the wire protocol and WSDL documents the service. They are also functional protocols in that they are immediately concerned with basic communication of messages.
 UDDI can act as a registry and can be considered the first non-functional standard. Complex information systems, however, require many more non-functional services that support the functional ones.
@@ -128,7 +128,7 @@ Listing 6.2. portType.
 
 WS-CDL is similar, but with extra tags that are concerned with the between organization processes.
 
-###Server-side XSLT
+### Server-side XSLT
 
 We saw client-side XSLT in chapter 5, but most XSLT processing is done on the server. Most programming languages have extensive libraries for dealing with XML, including XSLT processing. We will look at SAXON (http://saxon.sourceforge.net/), which is a java-based XSLT processor.
 
@@ -188,6 +188,6 @@ Figure 6.6. HTML from the DocBook XSLT.
 
 Listing 6.4. DocBook XML.
 
-###Chapter 6 Exercises
+### Chapter 6 Exercises
 
 Do the end-of-chapter exercises for each chapter of the book by following the link in the on-line syllabus.
