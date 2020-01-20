@@ -21,7 +21,7 @@ The simple <em>putty.exe</em> MSWindows ssh client is available at
 - you do not have to install it but rather just download the executable file and run it. 
   Unix machines like Apple Mac have command line ssh already installed.
   ​      
-You will need to know some unix commands and so do these <a href="unix.html.md">unix commands tutorial exercises</a>.  Once you have an ssh client up and running and connected to <em>gl.umbc.edu</em>, you can type the unix commands there. The '%' prompt shown in the tutorial will look different on gl, but that is where you type the commands. Since the vast majority of web servers are on linux or unix machines, it is necessary for us to know a handful of unix commands so as not to appear to be clowns.
+You will need to know some unix commands and so do these <a href="unix.html.md" target = "_blank">unix commands tutorial exercises</a>.  Once you have an ssh client up and running and connected to <em>gl.umbc.edu</em>, you can type the unix commands there. The '%' prompt shown in the tutorial will look different on gl, but that is where you type the commands. Since the vast majority of web servers are on linux or unix machines, it is necessary for us to know a handful of unix commands so as not to appear to be clowns.
 
 Here are some resources to help you use the terminal programs:
 
