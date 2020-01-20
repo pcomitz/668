@@ -1,6 +1,8 @@
 
 ## Chapter 5 - WSDL
 
+** NOTE: Some of the links and references in this chapter are outdated. It is included in this repository for reference only. **  
+
 WSDL (pronounced "Wisdel") is an XML vocabulary that describes all aspects of web services. It stands for web services description language. Recall that an XML vocabulary is the list of tags that form a specific markup language defined in a DTD or XMLSchema. In XML terminology, we say that WDSL (like SOAP) is an application of XML. WSDL like all web services protocols is created with XMLSchema. It is a crucial part of the system created for web services in that it gives a service requestor explicit documentation on how to create the request.
 It is so explicit, in fact, that a computer program can use WSDL to automatically create a SOAP document. In this chapter, we will cover WSDL in detail and briefly discuss the universal discovery description and integration (UDDI) protocol and web services registries in general.
 Finally, we will learn another XML standard technology called XML style language transform (XSLT).
