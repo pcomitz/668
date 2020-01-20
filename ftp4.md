@@ -1,16 +1,16 @@
 
-##File Transfer and Terminal Software Instructions
+## File Transfer and Terminal Software Instructions
 
-###Secure FTP or SCP
+### Secure FTP or SCP
 
 The secure versions of FTP (also called SCP for Secure Copy) are recommended for you to install. The graphical software is available 
 from <a href="http://winscp.net/eng/index.php">WinSCP</a>
 for Windows and <a href="http://cyberduck.ch">Cyberduck</a> works on both Windows and Mac. These are like FTP but encrypt the information that goes over the Internet and so is secure.  You should use one of these. You use the host<em> gl.umbc.edu</em>
 for any secure FTP software.
 
-###Terminal Programs (telnet and ssh)
+### Terminal Programs (telnet and ssh)
 
-<img src="/class/images/no-clowns1.jpg" height="125" width="125" style="float:left"/>
+<img src="images/no-clowns1.jpg" height="125" width="125" style="float:left"/>
 A terminal program is a program that allows you to open a window where you have a command line interface to a remote computer.  The older terminal program is called 'telnet' and is not secure. It does not work on gl (or anywhere else nowadays).
 The secure version of telnet is 'ssh' and that is the one you will use.  
 There is a windows command line client available from 
@@ -28,7 +28,7 @@ Here are some resources to help you use the terminal programs:
 - A <a href="http://www.fastcomet.com/tutorials/getting-started/putty">tutorial</a> for putty on windows (you will use the host <em>gl.umbc.edu </em>with your umbc username and password)
 - A <a href="http://p25ext.lanl.gov/ssh/login.html">tutorial</a> for command line access from a unix, linux, or mac.
 
-###Storage space on gl
+### Storage space on gl
 
 <li>Storage is limited on gl - about 25mb.</li>
 <li>Always make sure you have enough space in your account. Use the <em>fs quota</em> command at the gl prompt.  In the example below, the quota is almost gone and so one must delete some files to make more room in their account.  One can also transfer files to their <a href="https://wiki.umbc.edu/display/faq/Box">umbc box account</a> rather than deleting them to make room.  The web interface is at https://umbc.app.box.com (one can also setup a webdav share - see the faq above).  Your umbc box account has unlimited space.
@@ -38,14 +38,14 @@ $>fs quota
 </pre>
 </li>
 
-###Navigation in your Student Account
+### Navigation in your Student Account
 
 The gl host (gl.umbc.edu) is where you have your account. See the syllabus for links to the documentation for student accounts. Your account has the following directory structure where the parentheses denote hierarchical levels:
 
-`(username (Mail, backup, home, pub (swe2016)))`
+`(username (Mail, backup, home, pub (swe20XX)))`
 
 <div class="noteBorder">
-<b>Important</b> - the web directory changes each year.  So use the correct year, for example <em>swe2017</em> in the year 2017. The examples all show <em>swe2016</em> just so I don't have to change it yearly in this documentation. One can just change the directory name each year (using mv or cp) so nothing is lost.
+<b>Important</b> - the web directory changes each year.  So use the correct year, for example <em>swe2017</em> in the year 2017. The examples all show <em>swe20XX</em> just so I don't have to change it yearly in this documentation. One can just change the directory name each year (using mv or cp) so nothing is lost.
 </div>
 
 For example, my username is canfield and that is the root of my account structure. The two important directories for the exercises in this book will be home and swe2016. Your home directory is where your private files are kept. The swe2016 directory is under the pub directory and is the root of your web directory. Any file you put in swe2016 is available on the Internet. You or anyone else can access that file with the following format of a URL:
@@ -96,5 +96,5 @@ Or using the [tree](http://mama.indstate.edu/users/ice/tree/) command (not insta
 A `web directory` is a directory that has been configured by the web server admin to serve out web pages.  For students that have previously used the 'www' directory on gl for a web directory, OIT has changed this in fall of 2016 to use 'swe2016' instead on a virtual machine. This will allow many improvements including security enhancement and upgrade to php5.  The web directory name will change each year to reflect the current year.
 
 
-<img src="/class/images/p19715.gif"/>
+<img src="images/p19715.gif"/>
 
