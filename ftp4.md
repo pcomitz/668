@@ -26,7 +26,7 @@ You will need to know some unix commands and so do these <a href="unix.html">uni
 Here are some resources to help you use the terminal programs:
 
 - A <a href="http://www.fastcomet.com/tutorials/getting-started/putty">tutorial</a> for putty on windows (you will use the host <em>gl.umbc.edu </em>with your umbc username and password)
-- A <a href="http://p25ext.lanl.gov/ssh/login.html">tutorial</a> for command line access from a unix, linux, or mac.
+- A <a href="https://www.tutorialspoint.com/unix/unix-useful-commands.htm">reference</a> for command line access from a unix, linux, or mac.
 
 ### Storage space on gl
 
@@ -48,25 +48,25 @@ The gl host (gl.umbc.edu) is where you have your account. See the syllabus for l
 <b>Important</b> - the web directory changes each year.  So use the correct year, for example <em>swe2017</em> in the year 2017. The examples all show <em>swe20XX</em> just so I don't have to change it yearly in this documentation. One can just change the directory name each year (using mv or cp) so nothing is lost.
 </div>
 
-For example, my username is canfield and that is the root of my account structure. The two important directories for the exercises in this book will be home and swe2016. Your home directory is where your private files are kept. The swe2016 directory is under the pub directory and is the root of your web directory. Any file you put in swe2016 is available on the Internet. You or anyone else can access that file with the following format of a URL:
+For example, my username is canfield and that is the root of my account structure. The two important directories for the exercises in this book will be home and swe20XX. Your home directory is where your private files are kept. The swe2016 directory is under the pub directory and is the root of your web directory. Any file you put in swe2016 is available on the Internet. You or anyone else can access that file with the following format of a URL:
 
 `http://swe.umbc.edu/~canfield/test/file.html`
 
-Where you can make any subdirectories under swe2016 you wish such as the directory 'test'.  Here is a working example in my account: http://swe.umbc.edu/~canfield/programs/meta.html.
+Where you can make any subdirectories under swe20XX you wish such as the directory 'test'.  Here is a working example in my account: http://swe.umbc.edu/~pcomitz/programs/meta.html.
 
 Check that you have your web directory (swe2016) activated. Go to http://swe.umbc.edu/~username (with your username) and if you see a web page or a web directory browse, you are ok. If not, you need to activate your web directory by running this script from the gl command prompt:
 
 `/afs/umbc.edu/common/bin/enable_student_web_space.sh`
 
-Note that even though you SCP your files to gl.umbc.edu, you must use the swe.umbc.edu in the URL for access. Also note the special tilda symbol ~ that must precede your username. Finally, you can put the filename that you wish to see. You can include a path of any depth as long as it is below the swe2016 directory. In the example, the file.html file is in the test directory which must be under swe2016. The directory name swe2016 will never appear in a URL since it is the root. The complete physical pathname to my home directory on gl is:
+Note that even though you SCP your files to gl.umbc.edu, you must use the swe.umbc.edu in the URL for access. Also note the special tilda symbol ~ that must precede your username. Finally, you can put the filename that you wish to see. You can include a path of any depth as long as it is below the swe20XX directory. In the example, the file.html file is in the test directory which must be under swe2016. The directory name swe20XX will never appear in a URL since it is the root. The complete physical pathname to a home directory on gl is:
 
 `/afs/umbc.edu/users/c/a/canfield/home`
 
 When you SSH into your gl account, you are put in the home directory. So if you wanted to edit a file in swe2016, an easy way to navigate there would be:
 
-`$>cd ../pub/swe2016`
+`$>cd ../pub/swe20XX`
 
-There is usually a [symbolic link](https://en.wikipedia.org/wiki/Symbolic_link) to swe2016 in your home directory, however, so one can more simply do (but it is important to know what is happening):
+There is usually a [symbolic link](https://en.wikipedia.org/wiki/Symbolic_link) to swe20XX in your home directory, however, so one can more simply do (but it is important to know what is happening):
 
 `$>cd swe2016`
 
