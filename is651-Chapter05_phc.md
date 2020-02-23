@@ -229,6 +229,4 @@ Listing 5.6. The HTML output.
 
 XSLT is also used to transform XML documents in web services from one XML format to another when the participants need it. For example, in the PO example we used earlier, one of the participants might be using a different XMLSchema for the PO natively on their system than the one that is used by the web service that processes the POs even though all the actual content is the same. So XSLT can be used to transform the XML to use the appropriate schema at the appropriate time.
 
-### Chapter 5 Exercises
 
-Do the end-of-chapter exercises for each chapter of the book by following the link in the on-line syllabus.
