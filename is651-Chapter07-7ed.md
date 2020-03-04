@@ -177,12 +177,12 @@ We will use a server-side PHP program (which has no such cross-domain security r
 
 Listing 7.3. The result of the Guardian request.
 
-The curl command actually works on the command line. Try the following at the gl prompt:
+The curl command actually works on the command line. Try the following at the gl prompt. (Don't foregt tp sign up for a free API-KEY on the Guardian website)
 
-`$>curl 'http://content.guardianapis.com/search?q=syria&section=news&from-date=2013-09-01&format=XML'`
+`$>curl 'http://content.guardianapis.com/search?q=syria&section=news&from-date=2013-09-01&format=XML&api-key=YOUR_API_KEY'`
 
     < ?php
-        $request = 'http://content.guardianapis.com/search?q=syria&section=news&from-date=2013-09-01&format=XML';
+        $request = 'http://content.guardianapis.com/search?q=syria&section=news&from-date=2013-09-01&format=XML&api-key=YOUR_API_KEY';
         $ch = curl_init(); // initialize curl handle
         (http://us2.php.net/curl)
         curl_setopt($ch, CURLOPT_URL, $request); // set url - must match above
