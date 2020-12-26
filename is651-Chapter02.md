@@ -293,6 +293,7 @@ Java ObjectScript Notation, commonly referred to as [JSON](https://www.json.org/
 - JSON provides for the use of arrays. 
 - JSON is easier to parse than XML. JSON can be parsed directly by Javascript. XML generally requires the use of a parser, although it is included as part of the base functionality in some programming environments. 
 
+<pre>
     {
       "array": [
         1,
@@ -306,10 +307,11 @@ Java ObjectScript Notation, commonly referred to as [JSON](https://www.json.org/
       "object": {
       "a": "a value",
       "b": "b value"
-  },
-  "hello_string": "Hello World", 
-  "name_string": "PHC"
-}
+      },
+      "hello_string": "Hello World", 
+      "name_string": "PHC"
+    }
+</pre>
   
 Listing 2.3. Simple JSON Example
 
