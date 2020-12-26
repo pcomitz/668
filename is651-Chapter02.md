@@ -286,6 +286,31 @@ The program xmllint can find the shiporder.dtd file due to the declaration in th
 
 XML DTDs are used to define the XHTML standard as we will see in the end of chapter exercises. The XML wire protocol languages that will be used for XML web services are defined as valid XML as we will see in later chapters. For example, SOAP is an XML document that is defined and must be validated according to a standard schema. It uses the alternative and more modern method of validation, however, XMLSchema which we will cover in chapter4.
 
+### Java ObjectScript Notation 
+
+Java ObjectScript Notation, commonly referred to as [JSON](https://www.json.org/json-en.html), is a lightweight, text-based, human-readable format for data representation. It is widely used in distributed applications and in many cases it has replaced XML. It is very widley used in web services particularly RESTful web services. 
+
+
+    "array": [
+        1,
+        2,
+        3
+      ],
+      "boolean": true,
+      "color": "gold",
+      "nullVar": null,
+      "number": 123,
+      "object": {
+      "a": "a value",
+      "b": "b value"
+      },
+      "hello_string": "Hello World", 
+      "name_string": "PHC"
+    }
+
+
+Listing 2.3. Simple JSON Example
+
 ### Chapter 2 Exercises
 
 Do the end-of-chapter exercises for each chapter of the book by following the link in the on-line syllabus.
