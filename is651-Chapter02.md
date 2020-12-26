@@ -288,8 +288,10 @@ XML DTDs are used to define the XHTML standard as we will see in the end of chap
 
 ### Java ObjectScript Notation 
 
-Java ObjectScript Notation, commonly referred to as [JSON](https://www.json.org/json-en.html), is a lightweight, text-based, human-readable format for data representation. It is widely used in distributed applications and in many cases it has replaced XML. It is very widley used in web services particularly RESTful web services. 
-
+Java ObjectScript Notation, commonly referred to as [JSON](https://www.json.org/json-en.html), is a lightweight, text-based, human-readable format for data representation. It is widely used in distributed applications and in many cases it has replaced XML. It is very widley used in web services, particularly RESTful web services.  Listing 2.3 is a simple JSON example.  Note the following: 
+- JSON is a more compact notation that XML. 
+- JSON provides for the use of arrays. 
+- JSON is easier to parse that XML. JSON can be parsed directly by Javascript. XML generally requires the use of a parser, although it is is inlcuded as part of the base functionality in some programming environments. 
 
     "array": [
         1,
